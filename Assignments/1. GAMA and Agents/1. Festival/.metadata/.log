@@ -1,0 +1,19 @@
+!SESSION 2020-11-03 14:26:13.684 -----------------------------------------------
+eclipse.buildId=${build.id}
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=sv_SE
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -data @noDefault
+
+!ENTRY org.eclipse.core.jobs 4 2 2020-11-03 14:27:24.457
+!MESSAGE An internal error occurred during: "Xtext validation".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.xtext.ui.editor.validation.AddMarkersOperation.execute(AddMarkersOperation.java:113)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2295)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2322)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.xtext.ui.editor.validation.MarkerIssueProcessor.processIssues(MarkerIssueProcessor.java:77)
+	at msi.gama.lang.gaml.ui.editor.GamlEditor$2.run(GamlEditor.java:366)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
