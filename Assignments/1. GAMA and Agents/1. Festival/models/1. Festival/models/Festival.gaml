@@ -45,6 +45,7 @@ species Store {
 	bool bar <- false;
 	bool restaurant <- false;
 	rgb color <- #white;
+	point loc <- {50, 50};
 	
 	aspect default {
 		draw cube(8) at: location color: color; 
