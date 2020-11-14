@@ -1,6 +1,6 @@
 /***
 * Name: Auction
-* Author: Omar Alabbasi
+* Author: 
 ***/
 
 model Auctions
