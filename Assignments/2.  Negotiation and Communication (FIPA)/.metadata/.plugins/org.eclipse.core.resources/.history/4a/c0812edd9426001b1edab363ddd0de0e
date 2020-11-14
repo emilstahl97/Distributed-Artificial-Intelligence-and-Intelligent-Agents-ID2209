@@ -2,6 +2,7 @@
 * Name: Assignment2
 * Author: Emil Stahl & Peyman Peirovifar
 * Description: Negotiation and Communication (FIPA)
+* Tags: Tag1, Tag2, TagN
 ***/
 
 model BasicModel
