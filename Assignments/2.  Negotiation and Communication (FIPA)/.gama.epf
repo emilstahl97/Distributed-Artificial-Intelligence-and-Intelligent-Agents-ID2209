@@ -1,8 +1,9 @@
-#Sat Nov 14 14:06:15 CET 2020
+#Sat Nov 14 16:11:32 CET 2020
 \!/=
 /instance/org.eclipse.core.net/org.eclipse.core.net.hasMigrated=true
 /instance/org.eclipse.core.resources/pathvariable.CACHE_LOC=/Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Assignments/2.  Negotiation and Communication (FIPA)/.cache
 /instance/org.eclipse.core.resources/version=1
+/instance/org.eclipse.ui.editors/AbstractTextEditor.Color.Background.SystemDefault=false
 /instance/org.eclipse.ui.editors/overviewRuler_migration=migrated_3.1
 /instance/org.eclipse.ui.ide/PROBLEMS_FILTERS_MIGRATE=true
 /instance/org.eclipse.ui.ide/platformState=1604409828829
