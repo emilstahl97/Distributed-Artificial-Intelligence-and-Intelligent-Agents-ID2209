@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_r0n3QCXpEeuQP8gmFE8isA" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_r0n3QSXpEeuQP8gmFE8isA" bindingContexts="_r0n5IiXpEeuQP8gmFE8isA">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;MainAuction2.gaml&quot; tooltip=&quot;Negotiation and Communication (FIPA)/models/MainAuction2.gaml&quot;>&#xA;&lt;persistable path=&quot;/Negotiation and Communication (FIPA)/models/MainAuction2.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Basicmodel.gaml&quot; tooltip=&quot;Negotiation and Communication (FIPA)/models/Basicmodel.gaml&quot;>&#xA;&lt;persistable path=&quot;/Negotiation and Communication (FIPA)/models/Basicmodel.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;msi.gama.application.browser&quot; name=&quot;welcome.html&quot; tooltip=&quot;/Applications/GAMA.app/Contents/Eclipse/plugins/ummisco.gama.ui.shared_1.8.1.202006230234/welcome/welcome.html&quot;>&#xA;&lt;persistable uri=&quot;file:/Applications/GAMA.app/Contents/Eclipse/plugins/ummisco.gama.ui.shared_1.8.1.202006230234/welcome/welcome.html&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Auction.gaml&quot; tooltip=&quot;Negotiation and Communication (FIPA)/models/Auction.gaml&quot;>&#xA;&lt;persistable path=&quot;/Negotiation and Communication (FIPA)/models/Auction.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Auction.gaml&quot; tooltip=&quot;Unclassified Models/models/Auction.gaml&quot;>&#xA;&lt;persistable path=&quot;/Unclassified Models/models/Auction.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Neg.gaml&quot; tooltip=&quot;Negotiation and Communication (FIPA)/models/Neg.gaml&quot;>&#xA;&lt;persistable path=&quot;/Negotiation and Communication (FIPA)/models/Neg.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;msi.gama.application.browser&quot; name=&quot;welcome.html&quot; tooltip=&quot;/Applications/GAMA.app/Contents/Eclipse/plugins/ummisco.gama.ui.shared_1.8.1.202006230234/welcome/welcome.html&quot;>&#xA;&lt;persistable uri=&quot;file:/Applications/GAMA.app/Contents/Eclipse/plugins/ummisco.gama.ui.shared_1.8.1.202006230234/welcome/welcome.html&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;MainAuction2.gaml&quot; tooltip=&quot;Negotiation and Communication (FIPA)/models/MainAuction2.gaml&quot;>&#xA;&lt;persistable path=&quot;/Negotiation and Communication (FIPA)/models/MainAuction2.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Basicmodel.gaml&quot; tooltip=&quot;Negotiation and Communication (FIPA)/models/Basicmodel.gaml&quot;>&#xA;&lt;persistable path=&quot;/Negotiation and Communication (FIPA)/models/Basicmodel.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Auction.gaml&quot; tooltip=&quot;Negotiation and Communication (FIPA)/models/Auction.gaml&quot;>&#xA;&lt;persistable path=&quot;/Negotiation and Communication (FIPA)/models/Auction.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Auction.gaml&quot; tooltip=&quot;Unclassified Models/models/Auction.gaml&quot;>&#xA;&lt;persistable path=&quot;/Unclassified Models/models/Auction.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Neg.gaml&quot; tooltip=&quot;Negotiation and Communication (FIPA)/models/Neg.gaml&quot;>&#xA;&lt;persistable path=&quot;/Negotiation and Communication (FIPA)/models/Neg.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
   <children xsi:type="basic:TrimmedWindow" xmi:id="_r0n3QSXpEeuQP8gmFE8isA" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_r0n3QiXpEeuQP8gmFE8isA" x="0" y="23" width="3840" height="966">
@@ -11,6 +11,7 @@
     <persistedState key="workingSets" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workingSets/>"/>
     <persistedState key="aggregateWorkingSetId"/>
     <tags>topLevel</tags>
+    <tags>shellMaximized</tags>
     <children xsi:type="basic:PartSashContainer" xmi:id="_r0n3QiXpEeuQP8gmFE8isA" selectedElement="_r0n3QyXpEeuQP8gmFE8isA" horizontal="true">
       <children xsi:type="advanced:PerspectiveStack" xmi:id="_r0n3QyXpEeuQP8gmFE8isA" elementId="org.eclipse.ui.ide.perspectivestack" containerData="7500" selectedElement="_r0n3RCXpEeuQP8gmFE8isA">
         <children xsi:type="advanced:Perspective" xmi:id="_r0n3RCXpEeuQP8gmFE8isA" elementId="msi.gama.application.perspectives.ModelingPerspective" selectedElement="_r0n3RSXpEeuQP8gmFE8isA" label="Modeling" iconURI="platform:/plugin/ummisco.gama.ui.shared/icons/perspective.modeling2.png">
@@ -77,52 +78,10 @@
       <tags>categoryTag:General</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_r0n39SXpEeuQP8gmFE8isA" elementId="org.eclipse.ui.editorss" selectedElement="_r0n39iXpEeuQP8gmFE8isA">
-      <children xsi:type="basic:PartStack" xmi:id="_r0n39iXpEeuQP8gmFE8isA" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_LenlwCaYEeuvWfhwDX22lw">
+      <children xsi:type="basic:PartStack" xmi:id="_r0n39iXpEeuQP8gmFE8isA" elementId="org.eclipse.e4.primaryDataStack">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
         <tags>active</tags>
-        <children xsi:type="basic:Part" xmi:id="_r0n39yXpEeuQP8gmFE8isA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="welcome.html" iconURI="platform:/plugin/ummisco.gama.ui.shared/icons/navigator/file.html2.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;msi.gama.application.browser&quot; name=&quot;welcome.html&quot; partName=&quot;welcome.html&quot; title=&quot;welcome.html&quot; tooltip=&quot;/Applications/GAMA.app/Contents/Eclipse/plugins/ummisco.gama.ui.shared_1.8.1.202006230234/welcome/welcome.html&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; uri=&quot;file:/Applications/GAMA.app/Contents/Eclipse/plugins/ummisco.gama.ui.shared_1.8.1.202006230234/welcome/welcome.html&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>msi.gama.application.browser</tags>
-          <tags>removeOnHide</tags>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_r0n3_CXpEeuQP8gmFE8isA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Auction.gaml" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Auction.gaml&quot; partName=&quot;Auction.gaml&quot; title=&quot;Auction.gaml&quot; tooltip=&quot;Unclassified Models/models/Auction.gaml&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Unclassified Models/models/Auction.gaml&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;63&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>msi.gama.lang.gaml.Gaml</tags>
-          <tags>removeOnHide</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_r0n3_SXpEeuQP8gmFE8isA" elementId="#TextEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextEditorContext</tags>
-            <tags>popup:msi.gama.lang.gaml.Gaml.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_r0n4FSXpEeuQP8gmFE8isA" elementId="#TextRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextRulerContext</tags>
-            <tags>popup:msi.gama.lang.gaml.Gaml.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_r0n4FiXpEeuQP8gmFE8isA" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_JiAE4CaUEeuvWfhwDX22lw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Basicmodel.gaml" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Basicmodel.gaml&quot; partName=&quot;Basicmodel.gaml&quot; title=&quot;Basicmodel.gaml&quot; tooltip=&quot;Negotiation and Communication (FIPA)/models/Basicmodel.gaml&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Negotiation and Communication (FIPA)/models/Basicmodel.gaml&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;118&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>msi.gama.lang.gaml.Gaml</tags>
-          <tags>removeOnHide</tags>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_LenlwCaYEeuvWfhwDX22lw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="MainAuction2.gaml" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;MainAuction2.gaml&quot; partName=&quot;MainAuction2.gaml&quot; title=&quot;MainAuction2.gaml&quot; tooltip=&quot;Negotiation and Communication (FIPA)/models/MainAuction2.gaml&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Negotiation and Communication (FIPA)/models/MainAuction2.gaml&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;485&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>msi.gama.lang.gaml.Gaml</tags>
-          <tags>removeOnHide</tags>
-          <tags>active</tags>
-          <tags>activeOnClose</tags>
-        </children>
       </children>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_r0n4FyXpEeuQP8gmFE8isA" elementId="msi.gama.gui.view.GamaNavigator" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Models" iconURI="platform:/plugin/ummisco.gama.ui.shared/icons/view.navigator2.png" tooltip="" closeable="true">
@@ -937,7 +896,7 @@
     </bindings>
     <bindings xmi:id="_r0n4qiXpEeuQP8gmFE8isA" keySequence="ALT+COMMAND+G" command="_r0pGLSXpEeuQP8gmFE8isA"/>
     <bindings xmi:id="_r0n4qyXpEeuQP8gmFE8isA" keySequence="COMMAND+W" command="_r0pGhCXpEeuQP8gmFE8isA"/>
-    <bindings xmi:id="_tGKQASaLEeuvWfhwDX22lw" keySequence="COMMAND+CTRL+F" command="_r0pGoiXpEeuQP8gmFE8isA"/>
+    <bindings xmi:id="_7YcnsSjtEeu85bwLeBO5ZQ" keySequence="COMMAND+CTRL+F" command="_r0pGoiXpEeuQP8gmFE8isA"/>
   </bindingTables>
   <bindingTables xmi:id="_r0n4rSXpEeuQP8gmFE8isA" elementId="org.eclipse.ui.textEditorScope" bindingContext="_r0n5JyXpEeuQP8gmFE8isA">
     <bindings xmi:id="_r0n4riXpEeuQP8gmFE8isA" keySequence="COMMAND+END" command="_r0pGZSXpEeuQP8gmFE8isA"/>
@@ -1122,7 +1081,7 @@
     <bindings xmi:id="_r0n5EyXpEeuQP8gmFE8isA" keySequence="COMMAND+SHIFT+G" command="_r0pGVSXpEeuQP8gmFE8isA"/>
   </bindingTables>
   <bindingTables xmi:id="_r0n5FCXpEeuQP8gmFE8isA" contributorURI="platform:/fragment/org.eclipse.e4.ui.workbench.renderers.swt.cocoa" bindingContext="_r0n5KSXpEeuQP8gmFE8isA">
-    <bindings xmi:id="_tGK3ECaLEeuvWfhwDX22lw" keySequence="M1+W" command="_r0pGpCXpEeuQP8gmFE8isA"/>
+    <bindings xmi:id="_7YdOwCjtEeu85bwLeBO5ZQ" keySequence="M1+W" command="_r0pGpCXpEeuQP8gmFE8isA"/>
   </bindingTables>
   <bindingTables xmi:id="_r0n5FiXpEeuQP8gmFE8isA" bindingContext="_r0oeUCXpEeuQP8gmFE8isA"/>
   <bindingTables xmi:id="_r0n5FyXpEeuQP8gmFE8isA" bindingContext="_r0oeUSXpEeuQP8gmFE8isA"/>
