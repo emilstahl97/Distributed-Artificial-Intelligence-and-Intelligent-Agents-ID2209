@@ -1,188 +1,194 @@
-/***
-* Name: Assignment3 Task1
-* Author: Matay Mayrany
-* Description: Group 36, N queens problem
-***/
+/**
+* Name: Task1
+* Based on the internal empty template. 
+* Author: emilstahl
+* Tags: 
+*/
 
 model Task1
 
 global {
-    int N <- 8; 
-    
-    init {
-        create Queen number: N {
-           location <- {-10, -10};
-        }
-        
-    }
-    list<Queen> queens;
-    list<ChessboardCell> ChessboardCells;
-    
-}
-
-grid ChessboardCell skills:[fipa] width:N height:N neighbors:N {
-   rgb color <- #white;
-   bool busy <- false;
-   init {
-   		if ((grid_x + grid_y) mod 2 = 1) {
-			color <- #black;
-		} else {
-			color <- #white;
+	int number_of_queens <- 16;
+	int init_column <-0;
+	int column <-0;
+	list<queen> queens;
+	int createList<-0;
+	matrix cumulativePerception<- 0 as_matrix({number_of_queens,number_of_queens});
+	
+	init {
+		create queen number: number_of_queens{
+//			if number_of_queens = 4 {
+//				location <- my_grid[init_column,1].location;
+//				init_column <- init_column+1;
+//			}
+			location <- my_grid[init_column,0].location;
+			init_column <- init_column+1;
 		}
-		add self to: ChessboardCells;
-   }
- 
-}
-
-species Queen skills:[fipa] {
-    int myIndex;
-    int currentRow <- 0;
-    ChessboardCell selectedCell <-  nil;
-    bool noPositionsAvailable <- false;
-    bool foundMyPosition <- false;
-    bool tryToFindPosition <- false;
-    
-    init {
-    	queens << self;
-    	myIndex <- length(queens) - 1;
-    	if (length(queens) = N) {
-    		do start_conversation with:(to: list(queens[0]), protocol: 'fipa-request', performative: 'inform', contents: ['FindYourPosition']);        
-        	write "Let's get started!!!!";
-    	}
-    }
-    
-	reflex tellPerviousQueenToMove when: noPositionsAvailable {
-        do start_conversation with:(to: list(queens[myIndex - 1]), protocol: 'fipa-request', performative: 'inform', contents: ['RePosition']);
-        write name + ": " + queens[myIndex -1] + ", I can't find a spot can you please move";
-        noPositionsAvailable <- false;
 	}
-     
-	reflex informfoundMyPosition when: foundMyPosition {
-         if(myIndex != N -1) {
-             write name + ": I found a position, informing next queen of her turn!";
-             do start_conversation with:(to: list(queens[myIndex +1]), protocol: 'fipa-request', performative: 'inform', contents: ['FindYourPosition']);
-         } else {
-             write "All positions found!";
-         }
-         foundMyPosition <- false;
-        
-    }
-    
-   reflex reactToMessages when: !empty(informs) {
-    	message msg <- informs[0];
-    	list<unknown> c <- msg.contents;
-      	int x <- int(c[0]);
-    	if(x = 'FindYourPosition') {
-    		tryToFindPosition <- true;
-    		write name + ": I'm looking for a new position, currently at this row -> " + currentRow;
-    	} else if (msg.contents[0] = 'RePosition') {
-    		currentRow <- (currentRow + 1) mod N;
-    		foundMyPosition <- false;
-    		selectedCell.busy <- false;
-    		selectedCell <- nil; 
-    		location <- {-10, -10};
-    		
-    		if (currentRow = 0) {
-    			noPositionsAvailable <- true;
-    		} else {
-    			tryToFindPosition <- true;
-    		}
-    	}
-        informs <- nil;
-    }
-     
-    reflex tryToFindPosition when: tryToFindPosition{
-    	bool rowUnderAttack;
-      	bool diganoalUnderAttack;
-      
-        loop i from: currentRow to: N - 1 {   
-        	rowUnderAttack <- checkRowSafety(i);
-        	diganoalUnderAttack <- checkDiagonal(i,myIndex);
-        	if(!rowUnderAttack and !diganoalUnderAttack) {
-        		// empty out current cell if this isn't the first time we are looking for one
-        		if(selectedCell != nil) {
-        			selectedCell.busy <- false;
-        		}
-        		currentRow <- i;
-        		selectedCell <- ChessboardCells[getSelectedCell(myIndex, i)];
-        		
-        		location <- selectedCell.location;
-        		selectedCell.busy <- true;
-        		ChessboardCells[getSelectedCell(myIndex, currentRow)] <- selectedCell;
-        		tryToFindPosition <- false;
-        		foundMyPosition <- true;
-        		break;
-        	}
-        	
-        	if(i = (N-1) and !foundMyPosition) {
-        		noPositionsAvailable <- true;
-        		currentRow <- 0;
-        		tryToFindPosition <- false;
-        		foundMyPosition <- false;
-        		location <- (point(-5,-5));
-        		break;
-        	}
-        } 
-        
-     }
-     
-    int getSelectedCell(int curIndex, int row) {
-    	return (N * row) + curIndex;
-    }
-     
-	bool checkRowSafety(int row) {
-     	int col <- myIndex -1;
-     	if(col >= 0){	
-     		loop while: col >= 0 {
-        		ChessboardCell currentCell <- ChessboardCells[getSelectedCell(col,row)];
-        		if(currentCell.busy = true) {
-        			return true;
-        		}
-        		col <- col -1;
-       		} 
-     	}
-     	
-        return false;
-    }
-    
-    bool checkDiagonal(int row, int col) {
-    	int x <- col - 1;
-    	int y <- row - 1;
-    	loop while: (y >= 0 and x >= 0) {
-    		ChessboardCell currentCell <- ChessboardCells[getSelectedCell(x, y)];
-    		if(currentCell.busy = true) {
-        		return true;
-        	}
-        	y <- y - 1;
-     		x <- x - 1;
-    	}
-    	
-    	x <- col + 1;
-    	y <- row - 1;
-    	loop while: (y < N and y >= 0 and x >= 0) {
-    		ChessboardCell currentCell <- ChessboardCells[getSelectedCell(x, y)];
-    		if(currentCell.busy = true) {
-        		return true;
-        	}
-        	y <- y + 1;
-     		x <- x - 1;
-    	}
-    	return false;
-    }
-     
-    aspect default {
-        draw pyramid(5) at: location color: #red;
-    }
-     
-    
 }
 
-experiment main type: gui {
-   
-    output {
-        display map type: opengl {
-            grid ChessboardCell lines: #black ;
-            species Queen;
-        }
-    }
+grid my_grid skills: [fipa] width: number_of_queens height: number_of_queens {
+	rgb color <- bool(((grid_x + grid_y) mod 2)) ? #grey : #white;
+}
+
+species queen skills: [fipa] {
+	
+	bool informPred<- false;
+	bool informSucc<-false;
+	bool moveQueen<-false;
+	bool remindPosition<-false;
+	list<int> occupiedRows;
+	list<int> visitedRows;
+	list<int> tempRow;
+	int assignedRow<-0;
+	int messageQueen;
+	bool couldntFindSol;
+	
+	init{
+		add self to: queens;
+		createList <- createList+1;
+		assignedRow<-0;
+		if column=0and(createList=number_of_queens){
+			visitedRows <+ assignedRow; // add this row to the visited
+			cumulativePerception[column, assignedRow]<- 1;
+			do start_conversation with:(to: list(queens[column +1]), protocol: 'fipa-request', performative: 'inform', contents: ['Go on', assignedRow]);
+			write 'the first queen started the conversation';
+		}
+	}
+	
+	reflex listen_to_the_queen when: !empty(informs){
+			message posOfPreviousQueen <- (informs at 0);
+			write 'the message is '+posOfPreviousQueen;
+			list<unknown> ppq <- posOfPreviousQueen.contents;
+      		int p0 <- int(ppq[0]);
+      		int p1 <- int(ppq[1]);
+      		int x <- p0;
+			if (p0='Help meee'){
+				informPred<-true;
+			}
+			if (p0='Go on'){
+				messageQueen<-int(p1);
+				informSucc<-true;
+			}
+			if (p0='Remind me'){
+				remindPosition<-true;
+			}
+	}
+	
+	reflex inform_Predecessor when: informPred{
+		column<-column-1;
+		do start_conversation with:(to: list(queens[column -1]), protocol: 'fipa-request', performative: 'inform', contents: ['Remind me']);
+		informPred<-false;
+	}
+	
+	reflex inform_Successor when: informSucc{
+		column<- column+1;
+		moveQueen<-true;
+		informSucc<-false;
+	}
+	
+	reflex remind_position when:remindPosition {
+		column<- column-1;
+		if column<number_of_queens-1{
+			do start_conversation with:(to: list(queens[column +1]), protocol: 'fipa-request', performative: 'inform', contents: ['Go on',assignedRow]);
+		}
+		remindPosition<-false;
+	}
+	
+	reflex move_Queen when: moveQueen and (self=queens[column]){
+		list<int> possibleRows<-nil;
+		loop i from:0 to:number_of_queens-1{
+			possibleRows<+ i; // the possible rows are the n. of rows in a column
+		}
+		occupiedRows <- [messageQueen-1,messageQueen,messageQueen+1]; // the queen cannot be in one of these rows
+		possibleRows <- possibleRows-occupiedRows-visitedRows; // then the possible rows are all except of the occupied
+		write 'The possible rows for ' + queen[column]+ ' are ' + possibleRows;
+		write 'the possible - visited '+ (possibleRows-visitedRows);
+		if !empty(possibleRows) {
+			loop assignRow over: possibleRows{
+				int parallelRow<-0;
+				int upDiagRow <-0;
+				int downDiagRow <-0;
+				int sumRow<-0;
+				int updColDown<-0;
+				int updRowDown<-0;
+				int updColUp<-0;
+				int updRowUp<-0;
+				loop while: (column-updColDown>=0) and (assignRow-updRowDown>=0){
+					if (cumulativePerception[column-updColDown,assignRow-updRowDown]=1){
+						downDiagRow <-downDiagRow+1;
+						possibleRows<-possibleRows-assignRow;
+						write 'column: '+column+' assignedRow: '+ assignRow+' updRowDown: '+updRowDown+' updColDown: '+updColDown;
+						write 'the remained possible are '+ (possibleRows-visitedRows);
+					}
+					updColDown<-updColDown+1;
+					updRowDown<-updRowDown+1;
+				}
+				loop while: (column-updColUp>=0)and(assignRow+updRowUp<number_of_queens){
+					if (cumulativePerception[column-updColUp,assignRow+updRowUp]=1){
+						possibleRows<-possibleRows-assignRow;
+						upDiagRow <-upDiagRow+1;
+						write 'the remained possible are '+ (possibleRows-visitedRows);
+					}
+					updColUp<-updColUp+1;
+					updRowUp<-updRowUp+1;
+				}
+				loop col from:0 to:column{
+					if (cumulativePerception[col, assignRow]=1){
+						parallelRow <-parallelRow+1;
+						possibleRows<-possibleRows-assignRow;
+						write 'the remained possible are '+ (possibleRows-visitedRows);
+					}
+					write 'the parallel of '+assignRow+' is '+parallelRow;					
+				}
+				if empty(possibleRows-visitedRows){
+					write possibleRows;
+					couldntFindSol<-true;
+					break;
+				}
+				sumRow<-parallelRow+upDiagRow+downDiagRow;
+				write 'sumrow for row '+assignRow+ ' is '+sumRow;
+				if sumRow<1{
+					assignedRow <- assignRow;// assign a random row from the possible rows, that had not visited
+					visitedRows <+ assignedRow; // add this row to the visited
+					self.location<-my_grid[column, assignedRow].location;
+					write 'The assigned row for ' + queen[column]+ ' is ' + assignedRow;
+					write 'the visited for ' +queen[column] +' queen is ' +visitedRows;
+					cumulativePerception[column, assignedRow]<- 1;
+					write 'the cum perc is '+cumulativePerception;
+					moveQueen<-false;	
+					if column<number_of_queens-1{
+						do start_conversation with:(to: list(queens[column +1]), protocol: 'fipa-request', performative: 'inform', contents: ['Go on', assignedRow]);
+					}else{
+						write 'The process finished!';
+					}
+					write '' +assignRow+ ' row found to be ok. Lets check it out';
+					break;
+				}
+			}
+		}
+		if couldntFindSol{
+			write 'The ' +queen[column] + ' couldnt find a solution. Go back to the previous queen';
+			loop row from:0 to:number_of_queens-1{
+				cumulativePerception[column-1,row]<-0;
+			}
+			visitedRows<-nil;
+			moveQueen<-false;
+			do start_conversation with:(to: list(queens[column -1]), protocol: 'fipa-request', performative: 'inform', contents: ['Help meee']);					
+			couldntFindSol<-false;
+		}
+	}
+	
+	aspect base {
+		draw sphere(2) at: location color: #blue;
+	}
+}
+
+experiment BasicModelTask1 type: gui {
+	output {
+		display main_display type: opengl{
+			grid my_grid lines:#black;
+			species queen aspect: base;	
+		}
+	}	
 }
