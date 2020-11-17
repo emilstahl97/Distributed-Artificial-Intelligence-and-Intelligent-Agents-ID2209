@@ -60,8 +60,9 @@ species queen skills: [fipa] {
 			message posOfPreviousQueen <- (informs at 0);
 			write 'the message is '+posOfPreviousQueen;
 			list<unknown> ppq <- posOfPreviousQueen.contents;
-      		string p0 <- ppq[0];
-      		string p1 <- ppq[1];
+      		int p0 <- int(ppq[0]);
+      		int p1 <- int(ppq[1]);
+      		int x <- p0;
 			if (p0='Help meee'){
 				informPred<-true;
 			}
