@@ -2,9 +2,12 @@
 * Name: Festival
 * Author: Emil Ståhl, Peyman Peirovifar
 * Description: 
+* Tags: Tag1, Tag2, TagN
 ***/
 
-model Festival
+model Festival3
+
+/* Insert your model definition here */
 
 global {
 	
@@ -40,7 +43,10 @@ global {
 		create Guest number: 2 {
 			location <- rnd({0, 0}, {120, 120});
 			crowdW <- -2.5;			
-		}	
+		}
+		
+		
+		
 	}
 
 	
@@ -48,7 +54,10 @@ global {
 		draw square(100#m) at: {50, 50} color: #black;
 	}
 	
+	
 }
+
+
 
 species DanceFloor skills: [fipa] {
 	float width <- 30#m;
@@ -296,10 +305,20 @@ species Guest skills: [moving , fipa]{
 		
 	}
 	
+	
+	
 	aspect default {
 		color <- #blue;
     	draw sphere(1) color:color;
-    }	
+    }
+	
+	
+}
+///
+
+species Leader parent:Guest{
+	
+	
 	
 }
 
