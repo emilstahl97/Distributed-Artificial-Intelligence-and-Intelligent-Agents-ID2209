@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_Eeb70SjuEeuMcYkLkrqYJg" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_Eeci4CjuEeuMcYkLkrqYJg" bindingContexts="_Eeci5ijuEeuMcYkLkrqYJg">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Dance.gaml&quot; tooltip=&quot;3. Coordination and Utility/models/Dance.gaml&quot;>&#xA;&lt;persistable path=&quot;/3. Coordination and Utility/models/Dance.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;assignment3.gaml&quot; tooltip=&quot;3. Coordination and Utility/models/assignment3.gaml&quot;>&#xA;&lt;persistable path=&quot;/3. Coordination and Utility/models/assignment3.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;msi.gama.application.browser&quot; name=&quot;welcome.html&quot; tooltip=&quot;/Applications/GAMA.app/Contents/Eclipse/plugins/ummisco.gama.ui.shared_1.8.1.202006230234/welcome/welcome.html&quot;>&#xA;&lt;persistable uri=&quot;file:/Applications/GAMA.app/Contents/Eclipse/plugins/ummisco.gama.ui.shared_1.8.1.202006230234/welcome/welcome.html&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Task2.gaml&quot; tooltip=&quot;3. Coordination and Utility/models/Task2.gaml&quot;>&#xA;&lt;persistable path=&quot;/3. Coordination and Utility/models/Task2.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Festival3.gaml&quot; tooltip=&quot;3. Coordination and Utility/models/Festival3.gaml&quot;>&#xA;&lt;persistable path=&quot;/3. Coordination and Utility/models/Festival3.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Festival2.gaml&quot; tooltip=&quot;3. Coordination and Utility/models/Festival2.gaml&quot;>&#xA;&lt;persistable path=&quot;/3. Coordination and Utility/models/Festival2.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Festival.gaml&quot; tooltip=&quot;3. Coordination and Utility/models/Festival.gaml&quot;>&#xA;&lt;persistable path=&quot;/3. Coordination and Utility/models/Festival.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;queen.gaml&quot; tooltip=&quot;Unclassified Models/models/queen.gaml&quot;>&#xA;&lt;persistable path=&quot;/Unclassified Models/models/queen.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Task1.gaml&quot; tooltip=&quot;3. Coordination and Utility/models/Task1.gaml&quot;>&#xA;&lt;persistable path=&quot;/3. Coordination and Utility/models/Task1.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;FestivalFinal.gaml&quot; tooltip=&quot;/Users/emilstahl/Library/Mobile Documents/com~apple~CloudDocs/KTH/A&#x30a;r 4/Distributed Artificial Intelligence and Intelligent Agents ID2209/daiassignments/NabaMarios_FestivalFinalProject/FestivalFinal/models/FestivalFinal.gaml&quot;>&#xA;&lt;persistable uri=&quot;file:/Users/emilstahl/Library/Mobile%20Documents/com~apple~CloudDocs/KTH/A&#x30a;r%204/Distributed%20Artificial%20Intelligence%20and%20Intelligent%20Agents%20ID2209/daiassignments/NabaMarios_FestivalFinalProject/FestivalFinal/models/FestivalFinal.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;msi.gama.application.browser&quot; name=&quot;welcome.html&quot; tooltip=&quot;/Applications/GAMA.app/Contents/Eclipse/plugins/ummisco.gama.ui.shared_1.8.1.202006230234/welcome/welcome.html&quot;>&#xA;&lt;persistable uri=&quot;file:/Applications/GAMA.app/Contents/Eclipse/plugins/ummisco.gama.ui.shared_1.8.1.202006230234/welcome/welcome.html&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Festival2.gaml&quot; tooltip=&quot;3. Coordination and Utility/models/Festival2.gaml&quot;>&#xA;&lt;persistable path=&quot;/3. Coordination and Utility/models/Festival2.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;FestivalFinal.gaml&quot; tooltip=&quot;/Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/models/FestivalFinal.gaml&quot;>&#xA;&lt;persistable uri=&quot;file:/Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival%20Project/models/FestivalFinal.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Dance.gaml&quot; tooltip=&quot;3. Coordination and Utility/models/Dance.gaml&quot;>&#xA;&lt;persistable path=&quot;/3. Coordination and Utility/models/Dance.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;assignment3.gaml&quot; tooltip=&quot;3. Coordination and Utility/models/assignment3.gaml&quot;>&#xA;&lt;persistable path=&quot;/3. Coordination and Utility/models/assignment3.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Task2.gaml&quot; tooltip=&quot;3. Coordination and Utility/models/Task2.gaml&quot;>&#xA;&lt;persistable path=&quot;/3. Coordination and Utility/models/Task2.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Festival3.gaml&quot; tooltip=&quot;3. Coordination and Utility/models/Festival3.gaml&quot;>&#xA;&lt;persistable path=&quot;/3. Coordination and Utility/models/Festival3.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Festival.gaml&quot; tooltip=&quot;3. Coordination and Utility/models/Festival.gaml&quot;>&#xA;&lt;persistable path=&quot;/3. Coordination and Utility/models/Festival.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;queen.gaml&quot; tooltip=&quot;Unclassified Models/models/queen.gaml&quot;>&#xA;&lt;persistable path=&quot;/Unclassified Models/models/queen.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Task1.gaml&quot; tooltip=&quot;3. Coordination and Utility/models/Task1.gaml&quot;>&#xA;&lt;persistable path=&quot;/3. Coordination and Utility/models/Task1.gaml&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
   <children xsi:type="basic:TrimmedWindow" xmi:id="_Eeci4CjuEeuMcYkLkrqYJg" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_EqbwcCjuEeuMcYkLkrqYJg" x="0" y="23" width="2242" height="967">
@@ -27,21 +27,22 @@
           <tags>persp.viewSC:msi.gama.application.outline</tags>
           <tags>persp.viewSC:msi.gama.application.problems</tags>
           <tags>persp.perspSC:msi.gama.application.perspectives.SimulationPerspective</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_EvvuQSjuEeuMcYkLkrqYJg" selectedElement="_EvvuSCjuEeuMcYkLkrqYJg" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_EvvuQSjuEeuMcYkLkrqYJg" selectedElement="_EvvuQijuEeuMcYkLkrqYJg" horizontal="true">
             <children xsi:type="basic:PartSashContainer" xmi:id="_EvvuQijuEeuMcYkLkrqYJg" containerData="1281" selectedElement="_EvvuQyjuEeuMcYkLkrqYJg">
               <children xsi:type="basic:PartStack" xmi:id="_EvvuQyjuEeuMcYkLkrqYJg" elementId="msi.gama.gui.view.GamaNavigatorMStack" containerData="7000" selectedElement="_EvvuRCjuEeuMcYkLkrqYJg">
+                <tags>active</tags>
                 <children xsi:type="advanced:Placeholder" xmi:id="_EvvuRCjuEeuMcYkLkrqYJg" elementId="msi.gama.gui.view.GamaNavigator" ref="_EvsD4CjuEeuMcYkLkrqYJg" closeable="true">
                   <tags>View</tags>
                   <tags>categoryTag:Gama</tags>
                   <tags>NoClose</tags>
                 </children>
               </children>
-              <children xsi:type="basic:PartStack" xmi:id="_EvvuRSjuEeuMcYkLkrqYJg" elementId="msi.gama.application.outlineMStack" containerData="3000" selectedElement="_EvvuRyjuEeuMcYkLkrqYJg">
+              <children xsi:type="basic:PartStack" xmi:id="_EvvuRSjuEeuMcYkLkrqYJg" elementId="msi.gama.application.outlineMStack" toBeRendered="false" containerData="3000">
                 <children xsi:type="advanced:Placeholder" xmi:id="_EvvuRijuEeuMcYkLkrqYJg" elementId="msi.gama.application.outline" toBeRendered="false" ref="_EvugICjuEeuMcYkLkrqYJg" closeable="true">
                   <tags>View</tags>
                   <tags>categoryTag:Gama</tags>
                 </children>
-                <children xsi:type="advanced:Placeholder" xmi:id="_EvvuRyjuEeuMcYkLkrqYJg" elementId="msi.gama.application.problems" ref="_EvugISjuEeuMcYkLkrqYJg" closeable="true">
+                <children xsi:type="advanced:Placeholder" xmi:id="_EvvuRyjuEeuMcYkLkrqYJg" elementId="msi.gama.application.problems" toBeRendered="false" ref="_EvugISjuEeuMcYkLkrqYJg" closeable="true">
                   <tags>View</tags>
                   <tags>categoryTag:Gama</tags>
                 </children>
@@ -73,50 +74,26 @@
       <tags>categoryTag:General</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_EvmkUCjuEeuMcYkLkrqYJg" elementId="org.eclipse.ui.editorss" selectedElement="_EvnLYCjuEeuMcYkLkrqYJg">
-      <children xsi:type="basic:PartStack" xmi:id="_EvnLYCjuEeuMcYkLkrqYJg" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_DZk4YCwWEeull-VneJQ8yw">
+      <children xsi:type="basic:PartStack" xmi:id="_EvnLYCjuEeuMcYkLkrqYJg" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_O4TYIDiQEeuNWc6N4Oi5KQ">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
-        <tags>active</tags>
-        <children xsi:type="basic:Part" xmi:id="_PK4QYCjuEeuMcYkLkrqYJg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Task1.gaml" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Task1.gaml&quot; partName=&quot;Task1.gaml&quot; title=&quot;Task1.gaml&quot; tooltip=&quot;3. Coordination and Utility/models/Task1.gaml&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/3. Coordination and Utility/models/Task1.gaml&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;2&quot; selectionOffset=&quot;1675&quot; selectionTopPixel=&quot;1102&quot;/>&#xA;&lt;/editor>"/>
+        <children xsi:type="basic:Part" xmi:id="_O4TYIDiQEeuNWc6N4Oi5KQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="FestivalFinal.gaml" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;FestivalFinal.gaml&quot; partName=&quot;FestivalFinal.gaml&quot; title=&quot;FestivalFinal.gaml&quot; tooltip=&quot;/Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/models/FestivalFinal.gaml&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; uri=&quot;file:/Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival%20Project/models/FestivalFinal.gaml&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;302&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>msi.gama.lang.gaml.Gaml</tags>
           <tags>removeOnHide</tags>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_riMm8Cp9Eeuvs5y_84gv9Q" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Task2.gaml" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Task2.gaml&quot; partName=&quot;Task2.gaml&quot; title=&quot;Task2.gaml&quot; tooltip=&quot;3. Coordination and Utility/models/Task2.gaml&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/3. Coordination and Utility/models/Task2.gaml&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;1&quot; selectionOffset=&quot;2532&quot; selectionTopPixel=&quot;1236&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>msi.gama.lang.gaml.Gaml</tags>
-          <tags>removeOnHide</tags>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_iBuVECpjEeuvs5y_84gv9Q" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="queen.gaml" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;queen.gaml&quot; partName=&quot;queen.gaml&quot; title=&quot;queen.gaml&quot; tooltip=&quot;Unclassified Models/models/queen.gaml&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Unclassified Models/models/queen.gaml&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;128&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>msi.gama.lang.gaml.Gaml</tags>
-          <tags>removeOnHide</tags>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_DZk4YCwWEeull-VneJQ8yw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="assignment3.gaml" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;assignment3.gaml&quot; partName=&quot;assignment3.gaml&quot; title=&quot;assignment3.gaml&quot; tooltip=&quot;3. Coordination and Utility/models/assignment3.gaml&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/3. Coordination and Utility/models/assignment3.gaml&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2569&quot; selectionTopPixel=&quot;1727&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>msi.gama.lang.gaml.Gaml</tags>
-          <tags>removeOnHide</tags>
-          <tags>active</tags>
           <tags>activeOnClose</tags>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_KdvrcCwmEeull-VneJQ8yw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Dance.gaml" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;msi.gama.lang.gaml.Gaml&quot; name=&quot;Dance.gaml&quot; partName=&quot;Dance.gaml&quot; title=&quot;Dance.gaml&quot; tooltip=&quot;3. Coordination and Utility/models/Dance.gaml&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/3. Coordination and Utility/models/Dance.gaml&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;7031&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>msi.gama.lang.gaml.Gaml</tags>
-          <tags>removeOnHide</tags>
         </children>
       </children>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_EvsD4CjuEeuMcYkLkrqYJg" elementId="msi.gama.gui.view.GamaNavigator" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Models" iconURI="platform:/plugin/ummisco.gama.ui.shared/icons/view.navigator2.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="ummisco.gama.ui.navigator.GamaNavigator"/>
       <persistedState key="originalCompatibilityViewBundle" value="ummisco.gama.ui.navigator"/>
-      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; EXPANDED_STATE=&quot;User models@@/3. Coordination and Utility@@/3. Coordination and Utility/models@@/Unclassified Models&quot;>&#xA;&lt;lastRecentlyUsedFilters/>&#xA;&lt;/view>"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; EXPANDED_STATE=&quot;User models&quot;>&#xA;&lt;lastRecentlyUsedFilters/>&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:Gama</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_ExCHsCjuEeuMcYkLkrqYJg" elementId="msi.gama.gui.view.GamaNavigator">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -132,14 +109,14 @@
     <sharedElements xsi:type="basic:Part" xmi:id="_EvugISjuEeuMcYkLkrqYJg" elementId="msi.gama.application.problems" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Validation" iconURI="platform:/plugin/ummisco.gama.ui.shared/icons/view.problems2.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="ummisco.gama.ui.views.SyntaxErrorsView"/>
       <persistedState key="originalCompatibilityViewBundle" value="ummisco.gama.ui.modeling"/>
-      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view PRIMARY_SORT_FIELD=&quot;msi.gama.lang.gaml.ui.description.field&quot; categoryGroup=&quot;org.eclipse.ui.ide.allMarkers.severity&quot; markerContentGenerator=&quot;msi.gama.lang.gaml.ui.error.generator&quot; partName=&quot;Validation&quot;>&#xA;&lt;columnWidths msi.gama.lang.gaml.ui.description.field=&quot;300&quot; msi.gama.lang.gaml.ui.project.field=&quot;90&quot; org.eclipse.ui.ide.locationField=&quot;90&quot; org.eclipse.ui.ide.resourceField=&quot;90&quot;/>&#xA;&lt;visible IMemento.internal.id=&quot;msi.gama.lang.gaml.ui.description.field&quot;/>&#xA;&lt;visible IMemento.internal.id=&quot;msi.gama.lang.gaml.ui.project.field&quot;/>&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.resourceField&quot;/>&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.locationField&quot;/>&#xA;&lt;/view>"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view PRIMARY_SORT_FIELD=&quot;msi.gama.lang.gaml.ui.description.field&quot; categoryGroup=&quot;org.eclipse.ui.ide.allMarkers.severity&quot; markerContentGenerator=&quot;msi.gama.lang.gaml.ui.error.generator&quot; partName=&quot;Validation&quot;>&#xA;&lt;expanded>&#xA;&lt;category IMemento.internal.id=&quot;Errors&quot;/>&#xA;&lt;/expanded>&#xA;&lt;columnWidths msi.gama.lang.gaml.ui.description.field=&quot;300&quot; msi.gama.lang.gaml.ui.project.field=&quot;90&quot; org.eclipse.ui.ide.locationField=&quot;90&quot; org.eclipse.ui.ide.resourceField=&quot;90&quot;/>&#xA;&lt;visible IMemento.internal.id=&quot;msi.gama.lang.gaml.ui.description.field&quot;/>&#xA;&lt;visible IMemento.internal.id=&quot;msi.gama.lang.gaml.ui.project.field&quot;/>&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.resourceField&quot;/>&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.locationField&quot;/>&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:Gama</tags>
       <menus xmi:id="_E3cRsCjuEeuMcYkLkrqYJg" elementId="msi.gama.application.problems">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
       </menus>
-      <toolbar xmi:id="_E3cRsSjuEeuMcYkLkrqYJg" elementId="msi.gama.application.problems"/>
+      <toolbar xmi:id="_E3cRsSjuEeuMcYkLkrqYJg" elementId="msi.gama.application.problems" visible="false"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_EvvHMCjuEeuMcYkLkrqYJg" elementId="msi.gama.application.view.InteractiveConsoleView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Interactive console" iconURI="platform:/plugin/ummisco.gama.ui.shared/icons/view.interactive2.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="ummisco.gama.ui.views.InteractiveConsoleView"/>
@@ -1552,7 +1529,7 @@
     </bindings>
     <bindings xmi:id="_EfbaUyjuEeuMcYkLkrqYJg" keySequence="ALT+COMMAND+G" command="_Ee85TyjuEeuMcYkLkrqYJg"/>
     <bindings xmi:id="_EfbaVCjuEeuMcYkLkrqYJg" keySequence="COMMAND+W" command="_Ee9ggSjuEeuMcYkLkrqYJg"/>
-    <bindings xmi:id="_BczpsCwWEeull-VneJQ8yw" keySequence="COMMAND+CTRL+F" command="_Ef9l0SjuEeuMcYkLkrqYJg"/>
+    <bindings xmi:id="_E55_4DiREeu-_dZWUVfunA" keySequence="COMMAND+CTRL+F" command="_Ef9l0SjuEeuMcYkLkrqYJg"/>
   </bindingTables>
   <bindingTables xmi:id="_EfTegCjuEeuMcYkLkrqYJg" elementId="org.eclipse.ui.textEditorScope" bindingContext="_EfAjkyjuEeuMcYkLkrqYJg">
     <bindings xmi:id="_EfTegSjuEeuMcYkLkrqYJg" keySequence="COMMAND+END" command="_Ee9gYijuEeuMcYkLkrqYJg"/>
@@ -1737,7 +1714,7 @@
     <bindings xmi:id="_EfazRCjuEeuMcYkLkrqYJg" keySequence="COMMAND+SHIFT+G" command="_Ee9gUijuEeuMcYkLkrqYJg"/>
   </bindingTables>
   <bindingTables xmi:id="_Ef9l2CjuEeuMcYkLkrqYJg" contributorURI="platform:/fragment/org.eclipse.e4.ui.workbench.renderers.swt.cocoa" bindingContext="_Eeci6SjuEeuMcYkLkrqYJg">
-    <bindings xmi:id="_BczpsSwWEeull-VneJQ8yw" keySequence="M1+W" command="_Ef9l1ijuEeuMcYkLkrqYJg"/>
+    <bindings xmi:id="_E56m8DiREeu-_dZWUVfunA" keySequence="M1+W" command="_Ef9l1ijuEeuMcYkLkrqYJg"/>
   </bindingTables>
   <bindingTables xmi:id="_EvoZgSjuEeuMcYkLkrqYJg" bindingContext="_EvoZgCjuEeuMcYkLkrqYJg"/>
   <bindingTables xmi:id="_EvoZgyjuEeuMcYkLkrqYJg" bindingContext="_EvoZgijuEeuMcYkLkrqYJg"/>
@@ -2363,7 +2340,7 @@
   <addons xmi:id="_Eeci8ijuEeuMcYkLkrqYJg" elementId="MinMax Addon" contributorURI="platform:/plugin/org.eclipse.ui.workbench" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon"/>
   <addons xmi:id="_Eeci8yjuEeuMcYkLkrqYJg" elementId="org.eclipse.ui.workbench.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.workbench" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_EeiCcCjuEeuMcYkLkrqYJg" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>
-  <addons xmi:id="_Bch84SwWEeull-VneJQ8yw" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
+  <addons xmi:id="_E5r9cTiREeu-_dZWUVfunA" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
   <addons xmi:id="_dz0JgGOlEeSMMaPQU2nlzw" elementId="org.eclipse.ui.ide.application.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.ide.application/org.eclipse.ui.internal.ide.application.addons.ModelCleanupAddon"/>
   <addons xmi:id="_Ef8-wCjuEeuMcYkLkrqYJg" elementId="org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler"/>
   <categories xmi:id="_Ee4AsCjuEeuMcYkLkrqYJg" elementId="org.eclipse.team.ui.category.team" name="Team" description="Actions that apply when working with a Team"/>
