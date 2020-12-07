@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Final Project/models/New Mode.gaml&apos; to &apos;Festival.gaml&apos;" description="Rename resource &apos;New Mode.gaml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="models/New Mode.gaml" name="Festival.gaml" stamp="1607348959822" updateReferences="true"/>
+</session>
