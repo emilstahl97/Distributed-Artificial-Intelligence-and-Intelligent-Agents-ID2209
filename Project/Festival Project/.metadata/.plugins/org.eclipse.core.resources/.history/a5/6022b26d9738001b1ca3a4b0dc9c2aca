@@ -1,0 +1,734 @@
+/***
+* Name: Festival 'Final'
+* Author: 
+***/
+
+model FestivalFinal
+
+global {
+	geometry shape <- square(100#m);
+	DanceFloor the_dance_floor;
+	Restaurant the_restaurant;
+	Pub the_pub;
+	
+	int n_guests <- 50;
+	
+	/*
+	 * Global policy value tracks how the guests are learning over time in
+	 * reinforcement learning. This should gradually increase as guests
+	 * learns better and better policies individually.
+	 */
+	float global_policy_value <- 0.0;
+
+	/*
+	 * Following predicates define various BDI beliefs of the agents. Some are used track
+	 * memory when agents encounter new places and some are used to track internal
+	 * belief states.
+	 */
+	
+	// Location memory beliefs
+	string dance_floor_at_location <- "dance floor at location";
+	predicate dance_floor_location <- new_predicate(dance_floor_at_location);
+	string concert_at_location <- "concert at location";
+	predicate concert_location <- new_predicate(concert_at_location);
+	string pub_at_location <- "pub at location";
+	predicate pub_location <- new_predicate(pub_at_location);
+	string restaurant_at_location <- "restaurant at location";
+	predicate restaurant_location <- new_predicate(restaurant_at_location);
+	
+	// State and environment beliefs
+	predicate at_dance_floor <- new_predicate("at dance floor");
+	predicate at_restaurant <- new_predicate("at restaurant");
+	predicate at_pub <- new_predicate("at pub");
+	predicate feel_upbeat <- new_predicate("feel upbeat");
+	predicate hungry <- new_predicate("hungry");
+	predicate thirsty <- new_predicate("thirsty");
+	string in_meeting_with_guest <- "in meeting with guest";
+	predicate in_meeting <- new_predicate(in_meeting_with_guest);
+	
+	// Desires
+	predicate make_new_friends <- new_predicate("make new friends");
+	predicate chill <- new_predicate("chill");
+	predicate find_dance_floor <- new_predicate("find dance floor");
+	predicate find_restaurant <- new_predicate("find food stall");
+	predicate find_pub <- new_predicate("find pub");
+	predicate dance <- new_predicate("dance");
+	predicate eat <- new_predicate("eat");
+	predicate drink <- new_predicate("drink");
+	predicate converse <- new_predicate("converse");
+	predicate offer_drink <- new_predicate("offer drink");
+	
+	
+	// These are the guest types.
+	string type_party_goer <- "party goer";
+	string type_pop_queen <- "pop queen";
+	string type_journalist <- "journalist";
+	string type_chiller <- "chiller";
+	string type_bored <- "bored";
+	
+	// These are the attributes guest agents have.
+	string attrib_generosity <- "generosity";
+	string attrib_extroversion <- "extroversion";
+	string attrib_intelligence <- "intelligence";
+	string attrib_empathy <- "empathy";
+	string attrib_attractiveness <- "attractiveness";
+	string attrib_humor <- "humor";
+	
+	/*
+	 * Interaction map between different types of guests. The interactions are
+	 * affected by three attributes that only matter between the two
+	 * interacting types.
+	 */
+	map interaction_rule <- [
+		type_party_goer::[
+			type_party_goer::[attrib_attractiveness,  attrib_humor, attrib_extroversion],
+			type_pop_queen::[attrib_attractiveness, attrib_humor, attrib_extroversion],
+			type_journalist::[attrib_extroversion, attrib_intelligence, attrib_empathy],
+			type_chiller::[attrib_generosity, attrib_intelligence, attrib_attractiveness],
+			type_bored::[attrib_intelligence, attrib_empathy, attrib_humor]
+		],
+		type_pop_queen::[
+			type_party_goer::[attrib_attractiveness, attrib_extroversion, attrib_humor],
+			type_pop_queen::[attrib_attractiveness, attrib_extroversion, attrib_generosity],
+			type_journalist::[attrib_extroversion, attrib_intelligence, attrib_empathy],
+			type_chiller::[attrib_attractiveness, attrib_intelligence, attrib_humor],
+			type_bored::[attrib_attractiveness, attrib_intelligence, attrib_empathy]
+		],
+		type_journalist::[
+			type_party_goer::[attrib_intelligence, attrib_empathy, attrib_attractiveness],
+			type_pop_queen::[attrib_attractiveness, attrib_empathy],
+			type_journalist::[attrib_intelligence, attrib_extroversion],
+			type_chiller::[attrib_intelligence, attrib_empathy, attrib_attractiveness],
+			type_bored::[attrib_intelligence, attrib_empathy, attrib_humor]
+		],
+		type_chiller::[
+			type_party_goer::[attrib_intelligence, attrib_humor, attrib_generosity],
+			type_pop_queen::[attrib_intelligence, attrib_attractiveness, attrib_humor],
+			type_journalist::[attrib_intelligence, attrib_extroversion],
+			type_chiller::[attrib_intelligence,attrib_extroversion, attrib_generosity],
+			type_bored::[attrib_intelligence, attrib_extroversion, attrib_empathy]
+		],
+		type_bored::[
+			type_party_goer::[attrib_generosity, attrib_empathy, attrib_humor],
+			type_pop_queen::[attrib_generosity, attrib_empathy, attrib_attractiveness],
+			type_journalist::[attrib_generosity, attrib_empathy, attrib_intelligence],
+			type_chiller::[attrib_generosity, attrib_empathy, attrib_intelligence],
+			type_bored::[attrib_generosity, attrib_empathy, attrib_extroversion]
+		]
+	];
+	
+	/* 
+	 * Initialization creates the Festival world containing a dance floor,
+	 * a restaurant, a pub and several types of guests.
+	 */
+	init {
+		create Guest number: n_guests {
+			location <- rnd({0, 0}, {100, 100});
+		}
+		create DanceFloor {
+			location <- {20, 80};
+			the_dance_floor <- self;
+		}
+		create Restaurant {
+			location <- {80, 50};
+			the_restaurant <- self;
+		}
+		create Pub {
+			location <- {20, 30};
+			the_pub <- self;
+		}
+	}
+
+	/*
+	 * Global happiness is total sum of all guests happiness.
+	 */
+	reflex evaluate_societal_policy_value when:every(20#cycle){
+		global_policy_value <- 0.0;
+		ask Guest {
+			myself.global_policy_value <- myself.global_policy_value + rl.get_policy_value();
+		}
+	}
+	
+	aspect default {
+		draw square(100#m) at: {50, 50} color: #black;
+	}
+}
+
+/*
+ * Dance floor: Guests would visit dance floor to get upbeat and dance for a while
+ */
+species DanceFloor
+{
+	float width <- 30#m;
+	float height <- 30#m;
+	
+	aspect default {
+		color <- flip(0.5)? #purple : #yellow;
+		draw rectangle(width, height) at: location color: color;
+		draw "Dance Floor " at: location + {-10#m, 0}  color: #white font: font('Default', 18, #bold) ;
+	}
+}
+
+/*
+ * Restraurant: Guests would visit restraurant when they are hungry and eat there.
+ */
+species Restaurant {
+	float size <- 6#m;
+	
+	aspect default {
+		draw cube(size) at: location color: #red;
+		draw "Food" at: location + {-2.5#m, 0} color: #white font: font('Default', 12, #bold) ;
+	}
+}
+
+/* Pub: Guests would visit pub when they are thirsty and drink there. They would sometimes gift
+ * drinks to people they meet at pub.
+ */
+species Pub {
+	float size <- 20#m;
+	
+	aspect default {
+		draw square(size) at: location color: #blue;
+		draw "Pub" at: location + {-2.5#m, 0} color: #white font: font('Default', 12, #bold) ;
+	}
+}
+
+/*
+ * Personality is the core of how guests interact in Festival enviroment. Each guest has a
+ * unique personality defined by a character type of person and a set of attributes.
+ * The character type dictates which of the personality attributes strongly influence
+ * meeting other guests and for how long. It also influences gifting. The more match
+ * there is between the attributes of the two guests meeting, the higher the chance to meet
+ * and stay in meeting longer.
+ */
+species Personality
+{
+	string gender <- flip(0.5)? "male":"female" among:["male", "female"];
+
+	// Personality type
+	list personality_types <- [type_pop_queen, type_party_goer,
+		type_journalist, type_chiller, type_bored];
+	
+	string type <- personality_types[rnd(0, length(personality_types) - 1)];
+	
+	// Personality attributes - randomly generated for each individual.
+	map attribs <-[
+		attrib_generosity::rnd(1.0),
+		attrib_extroversion::rnd(1.0),
+		attrib_intelligence::rnd(1.0),
+		attrib_empathy::rnd(1.0),
+		attrib_attractiveness::rnd(1.0),
+		attrib_humor::rnd(1.0)];
+	
+	init {
+		
+	}
+	
+	/*
+	 * Following function computes general compatibility of the two
+	 * personalities. It ranges between 0 - 1.0 and is used in computing
+	 * numeraous actions, such as should a gift be offered, how long
+	 * the meeting last between two personalities etc..
+	 */
+	float compatibility(Personality the_other) {
+		float total <- 0.0;
+		loop key over:attribs.keys {
+			total <- total + (attribs[key] - the_other.attribs[key])^2;
+		}
+		return 1.0 - total/5.0;
+	}
+
+	float interaction_probability(Personality the_other) {
+		float total <- 0.0;
+		list interaction_attributes <- interaction_rule[type][the_other.type];
+		loop key over:interaction_attributes {
+			total <- total + (attribs[key] - the_other.attribs[key])^2;
+		}
+		return (1.0 - total/5.0);
+	}
+
+	/*
+	 * Based on the compatibility of the two agents and generosity of this
+	 * personality, the following function determines if this personality
+	 * offer a gift to the other. The actual gift depends on the context of
+	 * the meeting.
+	 */	
+	bool should_gift(Personality the_other) {
+		return flip(self.attribs["generosity"] * compatibility(the_other));
+	}
+}
+
+/*
+ * Guests roam aound the Festival ground by default. They get tired after a while
+ * would visit restaurant to eat. They also get thristy and would vist the pub.
+ * They also would want to enjoy a dance at the dance floor. The guest would
+ * also interact with other guests based on their personality type and
+ * attributes.
+ * 
+ * In the begining, guests would roam around and learn where varous event places
+ * are located in the festival ground. Guests' behavious are implemented using BDI
+ * architecturestates are maintained using BDI beliefs. Different desires are
+ * created as the beliefs of the agents change during the simulation. The desires
+ * in turn are ranked based on strenghts to become intentions which are then
+ * executed by the plans.
+ */
+species Guest skills: [moving, fipa] control: simple_bdi{
+	Personality personality <- nil;
+	point targetPoint <- nil;
+	float meet_distance <- 1#m;
+	float visit_distance <- 10#m;
+	float close_distance <- 1#m;
+	float converse_probability <- 0.2;
+	
+	int cooldown <- 100 min:0 max:20 update: cooldown - 1;
+	int upbeat <- rnd(1000, 2000) min:0 max:2000 update: upbeat - 1;
+	int energy <- rnd(500, 1000) min:0 max:1000 update: energy - 1;
+	int hydration <- rnd(1000, 2000) min:0 max:2000 update: hydration - 1;
+	
+	float happiness <- 0.0;
+
+	/*
+	 * Reinforcement learning to develop best knowledge-base and world view
+	 * by meeting the right type of guests at right time. See below for
+	 * further documentation.
+	 */
+	ReinforcementLearning rl;
+	
+	init {
+		// Initialize random type and personality
+		create Personality {
+			myself.personality <- self;
+		}
+		
+		// Create RL framework
+		create ReinforcementLearning {
+			myself.rl <- self;
+		}
+		
+		// Place the guest randomly
+		location <- rnd({0, 0}, {100, 100});
+		
+		// Default desire
+		do add_desire predicate:chill strength:1.0;
+	}
+
+	reflex moveToTarget when: targetPoint != nil {
+		do goto target:targetPoint;
+	}
+	
+	// Area locations
+	reflex inside_pub when: location distance_to(the_pub) <= visit_distance {
+		do add_belief(at_pub);
+	}
+	reflex outside_pub when: location distance_to(the_pub) > visit_distance {
+		do remove_belief(at_pub);
+	}
+	reflex inside_dance_floor when: location distance_to(the_dance_floor) <= visit_distance {
+		do add_belief(at_dance_floor);
+	}
+	reflex outside_dance_floor when: location distance_to(the_dance_floor) > visit_distance {
+		do remove_belief(at_dance_floor);
+	}
+	reflex inside_restaurant when: location distance_to(the_restaurant) <= visit_distance {
+		do add_belief(at_restaurant);
+	}
+	reflex outside_restaurant when: location distance_to(the_restaurant) > visit_distance {
+		do remove_belief(at_restaurant);
+	}
+	
+	// Perceive and remember various places at the Festival ground
+	perceive target:DanceFloor in:visit_distance {
+		write(name + ": dance floor encountered");
+		focus id:dance_floor_at_location var: location;
+    }
+
+	perceive target:Restaurant in:visit_distance {
+		focus id:restaurant_at_location var: location;
+		write(name + ": restaurant encountered");
+    }
+
+	perceive target:Pub in:visit_distance {
+		focus id:pub_at_location var: location;
+		write(name + ": pub encountered");
+    }
+
+	/* When we meet a new guest, meeting happens based on reinforcement-learning instruction
+	 * and compatibility score between the two agents.
+	 */
+	perceive target:Guest in:meet_distance when:cooldown <= 0 and
+		 get_belief(at_restaurant) = nil and get_belief(hungry) = nil {
+		
+		Guest guest_a <- myself;
+		Guest guest_b <- self;
+		Personality personality_a <- myself.personality;
+		Personality personality_b <- self.personality;
+		
+		if guest_a.get_belief(in_meeting) != nil or guest_b.get_belief(in_meeting) != nil {
+			write(guest_a.name + " and " + guest_b.name + " are already in meeting");
+			return;
+		}
+				
+		float compatibility_score;
+		ask personality_a {
+			compatibility_score <- compatibility(personality_b);
+			write(name + ": type =" + type + ", compatibility score = " + compatibility_score);
+		}
+		
+		/* Both agents enter meeting phase with some probability and stays in meeting
+		 * for as long as their compatibility dictates. Better the compatibility, longer
+		 * they stay in meeting (representated by 'duration').
+		 */
+		
+		/*
+		 * Determine if this guest should be met based on reinforcement learning action list
+		 */
+		string best_act <- guest_a.rl.get_next_act(personality_b.type);
+		write(name + ": Best personality type to meet now is: " + best_act);
+		
+		if best_act = nil or best_act = personality_b.type {
+			int meeting_duration <- int(100.0 * compatibility_score);
+			ask guest_a {
+				do add_belief lifetime:meeting_duration
+					predicate:new_predicate(in_meeting_with_guest,
+						["guest"::guest_b, "compatibility_score"::compatibility_score]);
+				happiness <- happiness + compatibility_score;
+				ask rl {do perform_act(personality_b.type);}
+			}
+			
+			ask guest_b {
+				do add_belief lifetime:meeting_duration
+					predicate:new_predicate(in_meeting_with_guest,
+						["guest"::guest_a, "compatibility_score"::compatibility_score]);
+				happiness <- happiness + compatibility_score;
+				ask rl {do perform_act(personality_a.type);}
+			}
+		}
+    }
+    
+    /*
+     * Based on the belief states of the agent, it defines various desires. Each
+     * desire is weighted by their strength to determine their priority in taking
+     * them as intensions.
+     */
+    rule when: upbeat <= 0 new_belief: feel_upbeat;
+    rule beliefs: [feel_upbeat, dance_floor_location] new_desire: find_dance_floor;
+    rule beliefs:[feel_upbeat, at_dance_floor] new_desire: dance strength: 3.0 lifetime: 100;
+    
+	rule when: energy <= 0 new_belief: hungry;
+	rule beliefs: [hungry, restaurant_location] new_desire: eat strength: 4.0;
+
+	rule when: hydration <= 0 new_belief: thirsty;
+	rule beliefs: [thirsty, pub_location] new_desire: drink strength: 5.0;
+
+	rule belief: in_meeting new_desire: converse strength: 6.0;
+	rule beliefs: [in_meeting, at_pub] new_desire: offer_drink strength: 7.0;
+
+	// Each desire is enacted through following plans
+	
+    // Just chill out
+    plan lets_chill intention: chill {
+    	do wander amplitude: 90.0;
+        do remove_intention(chill, false);
+    }
+    
+    // Need to feel upbeat? Visit dance floor and shake it up.
+    plan lets_find_dance_floor intention: find_dance_floor {
+    	if targetPoint = nil {
+		    targetPoint <- the_dance_floor.location + rnd({-10, -10}, {10, 10});
+		}
+        if (location = targetPoint) {
+	    	targetPoint <- nil;
+	    	do remove_intention(find_dance_floor, true);
+        }
+    }
+    
+    // Dance at the dance floor
+    plan lets_dance intention: dance {
+    	write(name + ": Dancing");
+    	do wander amplitude: 360.0 bounds: square(1) speed: 0.5;
+    	do remove_belief(at_dance_floor);
+    	do remove_belief(feel_upbeat);
+    	upbeat <- rnd(1000, 2000);
+    }
+    
+    // Low energy? Visit restaurant and have some food.
+    plan lets_eat intention: eat {
+    	write(name + ": Eating");
+	    do goto target: the_restaurant.location;
+        if (location = the_restaurant.location) {
+        	energy <- rnd(500, 1000);
+        	do remove_belief(hungry);
+        	do remove_intention(eat, true);
+    	}
+    }
+
+    // Dehydrated? Visit pub and have some drink.
+    plan lets_drink intention: drink {
+    	write(name + ": Drinking");
+	    do goto target: the_pub.location;
+        if (location = the_pub.location) {
+        	hydration <- rnd(1000, 2000);
+        	do remove_belief(thirsty);
+        	do remove_intention(drink, true);
+    	}
+    }
+
+	// We are in conversation
+	plan lets_converse intention: converse {
+		write(name + ": Conversing");
+		do goto target:location; // Stop moving.
+		do remove_intention(converse, true);
+		cooldown <- 20;
+	}
+	
+	// Have a good time talking at pub, but also see if we can offer a drink to the others.
+	plan lets_offer_drink intention:offer_drink {
+		
+		list<Guest> other_guests <-  get_beliefs_with_name(in_meeting_with_guest)
+			 collect (Guest(get_predicate(mental_state (each)).values["guest"]));
+		
+		loop g over:other_guests {
+			write(name + ": In meeting with: guest - " + g.name);
+			if self.personality.should_gift(g.personality) {
+				write(name + ": Offered a drink to guest - " + g.name);
+				happiness <- happiness + 0.3;
+			}
+		}
+		do remove_intention(offer_drink, true);
+	}
+	
+	aspect default {
+		color <- #white;
+
+		mental_state intention <- get_current_intention();
+		list meetings <-  get_beliefs_with_name(in_meeting_with_guest);
+		
+		if intention.predicate = drink {
+			color <- #blue;
+		}
+		if intention.predicate = eat {
+			color <- #red;
+		}
+		if length(meetings) > 0 {
+			color <- #yellow;
+		}
+		if intention.predicate = dance {
+			color <- #cyan;
+		}
+		
+		// Draw the guest agent
+    	draw cone3D(1, 3) color:color;
+    	draw at:{location.x, location.y, location.z + 2} geometry:sphere(0.8) color:color;
+    }
+}
+
+/*
+ * States represents agent's knowledge-base acquired during various experience of
+ * interacting with other agents. Knowlege-base is what allows the agent to possess a
+ * world view and therefore creates different preferences over who to meet next.
+ * Consequently, the agent has happiness (reward) based on the knowlege-base
+ * the agent possesses.
+ * 
+ * Knowleget-base, or the states, have specific way to grow and develop, depending on
+ * the kind of person the agent often meets. Reinforcement learning is used to let
+ * agent learn who and when to meet to maximize the hapiness (reward) from the
+ * knowlege-base.
+ */
+species ReinforcementLearning {
+
+	/*
+	 * Exploration vs exploitation
+	 */
+	float exploit <- 0.8;
+	
+	/*
+	 * Learning rate
+	 */
+	float alpha <- 0.8;
+	
+	/*
+	 * Future discount rate.
+	 */
+	float gamma <- 0.8;
+	
+	/*
+	 * This is current knowledge-base state of the agent.
+	 */
+	int current_state_x <- 0;
+	int current_state_y <- 0;
+
+	/*
+	 * Actions dictates how meeting a character type results in a state transition
+	 * within agent's knowledge-base map, transitioning to a new state.
+	 */
+	map actions <- [
+		type_party_goer::[0, 1], type_pop_queen::[0, -1],
+		type_journalist::[1, 0], type_chiller::[-1, 0],
+		type_bored::[1, -1]
+	];
+
+	/*
+	 * Knowledge-base states transition rule. States with '0' can not be transitioned
+	 * into. Hence, the agent has to learn to navigate around.
+	 */
+	matrix<int> valid_states <- matrix([
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+		[1, 1, 1, 1, 0, 0, 1, 1, 0, 1],
+		[1, 1, 1, 1, 1, 0, 1, 1, 0, 1],
+		[1, 1, 1, 0, 0, 0, 1, 0, 1, 1],
+		[1, 0, 1, 0, 0, 1, 1, 1, 1, 1],
+		[0, 0, 0, 0, 0, 1, 1, 1, 1, 1],
+		[0, 0, 1, 0, 1, 1, 1, 1, 1, 1],
+		[1, 1, 1, 0, 1, 0, 0, 1, 1, 1],
+		[1, 1, 1, 1, 1, 0, 0, 1, 1, 1],
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+	]);
+	
+	/*
+	 * These are the rewards the agents receive in each state. Some
+	 * knowledge-base states have high reward (such as when agent is
+	 * because very smart and knowlegable).
+	 */
+	matrix<int> rewards <- matrix([
+		[ 0, 0,99, 0, 0, 0, 0, 0, 0, 0],
+		[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+		[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+		[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+		[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+		[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+		[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+		[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+		[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+		[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+	]);
+
+	/*
+	 * Q-learning table
+	 */
+	matrix<map<string, float>> Q <- {10, 10} matrix_with [];
+	
+	bool is_goal_reached {
+		if current_state_x = 0 and current_state_y = 2 {
+			write(name + ": RL goal reached, Reward at goal = " + rewards at {0, 2});
+			return true;
+		}
+		return false;
+	}
+	
+	// Returns valid transition actions for the given state
+	list get_valid_acts(int state_x, int state_y) {
+		list valid_actions <- [];
+		loop a over:actions.keys {
+			int new_x <- state_x + actions[a][0];
+			int new_y <- state_y + actions[a][1];
+			if (new_x >=0 and new_x < 10 and new_y >= 0 and new_y < 10
+				and (valid_states at {new_x, new_y}) = 1) {
+				valid_actions <- valid_actions + a;
+			}
+		}
+		return valid_actions;
+	}
+
+	// Returns the value of the state (maximum of the Q-states).
+	float get_state_value(int state_x, int state_y) {
+		return max(Q at {state_x, state_y});
+	}
+	
+	// Returns the best action to take next
+	string get_next_act(string requested) {
+
+		list<string> valid_actions <- get_valid_acts(current_state_x, current_state_y);
+		write(name + ": valid actions are: " + valid_actions);
+		
+		if (flip(exploit)) {
+			// Exploitation: Pick the action with the best Q-value
+			list best <- [];
+			float best_value <- -1000000000.0;
+			map state_q_values <- Q at {current_state_x, current_state_y};
+			write (name + ": state_q_values: " + state_q_values);
+			
+			loop act over:valid_actions {
+				float q_value <- state_q_values[act];
+				write (name + ": q_value for act (" + act + ") -> " + q_value);
+				if q_value > best_value {
+					best <- [act];
+					best_value <- q_value;
+				} else if q_value = best_value {
+					best <- best + [act];
+				}
+			}
+			return best[rnd(0, length(best) - 1)];
+		} else {
+			
+			// Exploration: Pick the current requested one
+			return requested;
+		}
+	}
+	
+	action perform_act(string act) {
+		
+		// Only valid acts can be performed.
+		list valid_acts <- get_valid_acts(current_state_x, current_state_y);
+		if valid_acts contains(act) = false {
+			return;
+		}
+		
+		// Update state to next knowledge-base world view.
+		int next_state_x <- current_state_x + actions[act][0];
+		int next_state_y <- current_state_y + actions[act][1];
+		float q_value <- (Q at {current_state_x, current_state_y})[act];
+		float value_next <- get_state_value(next_state_x, next_state_y);
+		int reward_next <- rewards at {next_state_x, next_state_y};
+		
+		// update Q-table
+		q_value <- (1 - alpha) * q_value + alpha * (reward_next + gamma * value_next);
+		(Q at {current_state_x, current_state_y})[act] <- q_value;
+		
+		// Move to next state.
+		current_state_x <- next_state_x;
+		current_state_y <- next_state_y;
+
+		// Once the learning goal is reached, reset the learning episode.		
+		if (is_goal_reached()) {
+			current_state_x <- 0;
+			current_state_y <- 0;
+		}
+		
+		// write(name + ": Q -> " + Q);
+	}
+	
+	action print_policy {
+		write(name + ": Learned policy ->");
+		write(Q);
+	}
+	
+	float get_policy_value {
+		float total <- 0.0;
+		
+		loop x from:0 to:9 {
+			loop y from:0 to:9 {
+				total <- total + get_state_value(x, y);
+			}
+		}
+		return total;
+	}
+}
+
+experiment main type:gui autorun:true {
+	float minimum_cycle_duration <- 0.03#seconds;
+	output {
+	    display "global_policy_value" {
+	        chart "Global Policy Value" type: series {
+		        data "Global Policy Value" value: global_policy_value color: #red;
+	        }
+	    }
+		display simulation type:opengl background:#black
+			camera_pos:{100, 100, 70} {
+			species Guest;
+			species DanceFloor;
+			species Restaurant;
+			species Pub;
+		}
+	}
+}
