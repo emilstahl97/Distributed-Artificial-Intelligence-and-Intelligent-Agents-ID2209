@@ -1,0 +1,36 @@
+	type_Influencer::[
+			type_Influencer::[Agreeableness,  Impulsivity, Openness],
+			type_Extrovert::[Agreeableness, Impulsivity, Openness],
+			type_Photographer::[Openness, Neuroticism, Conscientiousness],
+			type_Werido::[Kindness, Neuroticism, Agreeableness],
+			type_Introvert::[Neuroticism, Conscientiousness, Impulsivity]
+		],
+		type_Extrovert::[
+			type_Influencer::[Agreeableness, Openness, Impulsivity],
+			type_Extrovert::[Agreeableness, Openness, Kindness],
+			type_Photographer::[Openness, Neuroticism, Conscientiousness],
+			type_Werido::[Agreeableness, Neuroticism, Impulsivity],
+			type_Introvert::[Agreeableness, Neuroticism, Conscientiousness]
+		],
+		type_Photographer::[
+			type_Influencer::[Neuroticism, Conscientiousness, Agreeableness],
+			type_Extrovert::[Agreeableness, Conscientiousness],
+			type_Photographer::[Neuroticism, Openness],
+			type_Werido::[Neuroticism, Conscientiousness, Agreeableness],
+			type_Introvert::[Neuroticism, Conscientiousness, Impulsivity]
+		],
+		type_Werido::[
+			type_Influencer::[Neuroticism, Impulsivity, Kindness],
+			type_Extrovert::[Neuroticism, Agreeableness, Impulsivity],
+			type_Photographer::[Neuroticism, Openness],
+			type_Werido::[Neuroticism,Openness, Kindness],
+			type_Introvert::[Neuroticism, Openness, Conscientiousness]
+		],
+		type_Introvert::[
+			type_Influencer::[Kindness, Conscientiousness, Impulsivity],
+			type_Extrovert::[Kindness, Conscientiousness, Agreeableness],
+			type_Photographer::[Kindness, Conscientiousness, Neuroticism],
+			type_Werido::[Kindness, Conscientiousness, Neuroticism],
+			type_Introvert::[Kindness, Conscientiousness, Openness]
+		]
+	];
