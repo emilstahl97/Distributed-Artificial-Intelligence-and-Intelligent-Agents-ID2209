@@ -1,11 +1,11 @@
-/***
-* Name: FinalProject
-* Author: 
-* Description: Behavior of different agents
-* Tags: Tag1, Tag2, TagN
-***/
+/**
+* Name: FestivalSimulation
+* Based on the internal empty template. 
+* Author: emilstahl
+* Tags: 
+*/
 
-model BasicModel
+model FestivalSimulation
 
 global {
 	int number_of_places <- 9;

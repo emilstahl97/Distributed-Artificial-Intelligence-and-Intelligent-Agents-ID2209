@@ -1,11 +1,11 @@
-/***
-* Name: FinalProject
-* Author: 
-* Description: Behavior of different agents
-* Tags: Tag1, Tag2, TagN
-***/
+/**
+* Name: FestivalSimulation
+* Based on the internal empty template. 
+* Author: emilstahl
+* Tags: 
+*/
 
-model BasicModel
+model FestivalSimulation
 
 global {
 	int number_of_places <- 9;
@@ -244,7 +244,7 @@ experiment BasicModel type: gui {
 			species place aspect: base;
 			species guest aspect: base;
 		}
-		display Chart refresh: every(500#cycles) {
+		display Chart refresh: every(50#cycles) {
 			chart "Acceptance and rejection" type: pie { 
 				data "Acceptance" value: acceptance_count color: #green;
 				data "Rejection" value: rejection_count color: #red;
