@@ -1,13 +1,35 @@
-Kindness attrib_generosity
-Neuroticism attrib_intelligence
-Agreeableness attrib_attractiveness
-Conscientiousness attrib_empathy
-Impulsivity attrib_humor
-Openness attrib_extroversion
+Party
+Chill
+Alcoholic
+Instagrammer
+Dealer
 
+Stage
+Bar
+Terrace
 
-type_Introvert type_bored
-type_Werido type_chiller
-type_Photographer type_journalist
-type_Influencer type_party_goer
-type_Extrovert type_pop_queen
+Genereous
+Friendly
+Wealthy
+
+----------------------------------------------------------------
+
+Party -> Extrovert
+Chill -> Introvert
+Alcoholic -> Juicehead
+Instagrammer -> Journalist
+Dealer -> Salesman
+
+interact_party -> Extrovert_attribute
+interact_chill -> Introvert_attribute
+interact_alcoholic -> Juicehead_attribute
+interact_instagrammer -> Journalist_attribute
+interact_dealer -> Salesman_attribute
+
+Stage -> DanceFloor
+Bar -> Pub
+Terrace -> Store
+
+Genereous -> Kindness
+Friendly -> Sympathetic
+Wealthy -> Charitable
