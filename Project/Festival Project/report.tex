@@ -13,8 +13,11 @@
 \maketitle
 
 \section{Introduction}
-This report covers an experiment that demonstrates and analyzes the behaviors and interactions between different types of agents by simulating a festival event. The agents have their own personal characteristics, preferences and intentions of visiting the festival. The experiment is set to investigate what happens when these agents meet and interact with each other. How will the agents change each others behaviors?
-The experiment is conducted as a simulation using the GAMA platform which is an open-source environment for spatially explicit multiagent simulations. 
+This report covers an experiment that demonstrates and analyzes the behaviors and interactions between different types of 
+agents by simulating a festival event. The agents have their own personal characteristics, preferences and intentions of 
+visiting the festival. The experiment is set to investigate what happens when these agents meet and interact with each other. How will the agents change each others behaviors?
+The experiment is conducted as a simulation using the GAMA platform which is an open-source environment for spatially 
+explicit multiagent simulations. 
 
 
 \maketitle
@@ -23,14 +26,18 @@ This sections describes the method and approach used during the project work.
 
 \maketitle
 \subsection{Simulation}
-To simulate the festival we used some parts from our previous work such as ”GAMA and Agents”, ”Negotiation and Communication (FIPA)” and ”Coordination and Utility”. As an example, the dance floors from the third project is reused in this experiment. Similar to the first work in ”GAMA and Agents” there are places for the agents to visit when desired. These places are stage, terrace, bars and pubs. Furthermore, each agent has a predetermined personality trait which determines how they will interact with other agents, accept proposals and move around the festival area. 
-The project is divided into different parts. Firstly, a basic version was implemented with the following properties:
+To simulate the festival we used some parts from our previous work such as ”GAMA and Agents”, ”Negotiation and Communication 
+(FIPA)” and ”Coordination and Utility”. As an example, the dance floors from the third project is reused in this experiment. 
+Similar to the first work in ”GAMA and Agents” there are places for the agents to visit when desired. These places are dance 
+floor, store,  and pubs. Furthermore, each agent has a predetermined personality trait which determines how they will 
+interact with other agents, accept proposals and move around the festival area. 
+The simulation has the following structure.
 
 \begin{itemize}
     \item 5 types of agents totaling a number of 50 
     \item Rules of how the agents interact with other agents
-    \item Each guest has 3 personal traits
-    \item Four types of places where the agents can meet
+    \item Each guest has 3 personal traits of a varying intensity
+    \item Three types of places where the agents can meet
     \item Continuously running simulation
     \item FIPA protocol for long distance messaging
 \end{itemize}
@@ -128,7 +135,7 @@ The personality traits given to each agent has absolute priority over the agent 
 
 This section shows the results from running the experiment
 
-\subsection{Results of acceptance and rejection rate}
+\subsection{Acceptance and rejection rate}
 
 The goal if this experiment is to measure the acceptance and rejection rate of the proposals made between all the agents. This is done by accumulating the global counters acceptance\_count and rejection\_count. These variables are updated in the if-clauses of the interact reflex. 
 
@@ -147,7 +154,7 @@ The goal if this experiment is to measure the acceptance and rejection rate of t
     }
 \end{verbatim}
 
-In the experiment a chart is displayed with these values and is continuously updated throughout the entirety of the simulation. The results is shown in the diagram below:
+In the experiment a chart is displayed with these values and is continuously updated throughout the entirety of the simulation. The results are shown in the chart below:
 
 \begin{center}{}
 \centering\includegraphics[scale=0.05]{original_exp.png}\par
@@ -180,7 +187,7 @@ As described in an earlier sections it was stated that personality trait have ab
 \end{center}
 
 \section{Discussion}
-
+The GAMA platform can provide a valuable introduction for those who want to simulate a model with a multi-agent environment. The high-level language and multi-library support enable users to experiment with advanced techniques, such as reinforcement learning, and the intuitive user interface can attract beginners as well. However, the platform has its limitations and other alternatives provide more targeted and modern solutions for specific problems. 
 \section{Conclusion}
 
 \end{document}
