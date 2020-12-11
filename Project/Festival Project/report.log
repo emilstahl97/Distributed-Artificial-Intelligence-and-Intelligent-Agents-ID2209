@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.20)  11 DEC 2020 15:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.20)  11 DEC 2020 16:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/report"
+**"/Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/report.tex"
 (/Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/report.tex
 LaTeX2e <2018-12-01>
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
@@ -44,8 +44,7 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
-)
-No file report.aux.
+) (/Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/report.aux)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
@@ -60,7 +59,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
-(/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count88
 \scratchdimen=\dimen105
@@ -142,7 +141,7 @@ File: original_exp.png Graphic file (type png)
 <use original_exp.png>
 Package pdftex.def Info: original_exp.png  used on input line 153.
 (pdftex.def)             Requested size: 192.43015pt x 137.5218pt.
- [4 <./original_exp.png>]
+ [4 </Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/original_exp.png>]
 <lowerthreshold.png, id=25, 3346.5025pt x 2433.09pt>
 File: lowerthreshold.png Graphic file (type png)
 <use lowerthreshold.png>
@@ -158,17 +157,17 @@ File: priority.png Graphic file (type png)
 <use priority.png>
 Package pdftex.def Info: priority.png  used on input line 179.
 (pdftex.def)             Requested size: 165.62845pt x 125.978pt.
- [5 <./lowerthreshold.png> <./notimelimit.png>] [6 <./priority.png>] (./report.aux) ) 
+ [5 </Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/lowerthreshold.png> </Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/notimelimit.png>] [6 </Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/priority.png>] (/Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/report.aux) ) 
 Here is how much of TeX's memory you used:
- 1509 strings out of 492616
- 22507 string characters out of 6129480
+ 1511 strings out of 492616
+ 23275 string characters out of 6129480
  86809 words of memory out of 5000000
  5425 multiletter control sequences out of 15000+600000
  8370 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,7n,25p,731b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,7n,25p,735b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (6 pages, 441981 bytes).
+Output written on "/Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/report.pdf" (6 pages, 442826 bytes).
 PDF statistics:
  60 PDF objects out of 1000 (max. 8388607)
  36 compressed objects within 1 object stream

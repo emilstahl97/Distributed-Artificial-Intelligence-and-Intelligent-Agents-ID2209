@@ -46,9 +46,9 @@ This section describes the implementation of the simulation.
 The simulation is created with three types of locations where the festival guests can meet and interact. These places are:
 
 \begin{itemize}
-    \item Bar
-    \item Stage
-    \item Terrace
+    \item Pub
+    \item DanceFloor
+    \item Store
     
 \end{itemize}
 
@@ -61,9 +61,9 @@ A species called ”Guest” is created to handle the logic of the agents moving
 Every guest presented in the simulation are given three types of personality traits with a value [0, 10] that determines how strong each personality trait are. The value is randomly initialized once the simulation is started. The different types of traits are:
 
 \begin{itemize}
-    \item Generous
-    \item Friendly
-    \item Wealthy
+    \item Kindness
+    \item Sympathetic
+    \item Charitable
     
 \end{itemize}
 The degree of each personality trait determines how the guest will interact with other guests and to what extent they accept or reject potential proposals from other guests. Furthermore, this acceptance rate of each guest is accumulated in a global counter and presented in the form of a pie chart in order to monitor how it changes during the simulation. 
@@ -72,11 +72,11 @@ The degree of each personality trait determines how the guest will interact with
 In addition to the guests personality traits, each guest is also given one of five personality attributes that decides how the guest will interact with other types of guests with other attributes as well as where the guest prefer to hangout within the festival area. The attributes are:
 
 \begin{itemize}
-    \item Party
-    \item Chill
-    \item Alcoholic
-    \item Instagrammer
-    \item Dealer
+    \item Extrovert
+    \item Introvert
+    \item Juicehead
+    \item Journalist
+    \item Salesman
 \end{itemize}
 
 The preference of each guest is displayed in the table below:
@@ -86,11 +86,11 @@ The preference of each guest is displayed in the table below:
  \hline
  \textbf{Attribute} & \textbf{Preffered Place} \\
 
- Party & Stage \\ 
- Chill & Terrace  \\ 
- Alcoholic & Bar  \\
- Instagrammer & None \\
- Dealer & None \\
+ Extrovert & DanceFloor \\ 
+ Introvert & Store  \\ 
+ Juicehead & Pub  \\
+ Journalist & None \\
+ Salesman & None \\
  
  \hline
 \end{tabular}
@@ -110,16 +110,16 @@ Every guest is given a set of rules that determine how they will interact with o
 \begin{tabular}{ |c| } 
  \hline
  \textbf{Agent Rules} \\
- interact\_party \\
- interact\_chill \\
- interact\_alcoholic \\
- interact\_instagrammer \\
- interact\_dealer \\
+ Extrovert\_attribute \\
+ Introvert\_attribute \\
+ Juicehead\_attribute \\
+ Journalist\_attribute \\
+ Salesman\_attribute \\
  \hline
 \end{tabular}
 \end{center}
 
-A proposal from one agent to another is determined by the corresponding value of the making the proposal. For example, if a guest receives a proposal from a guest with the type of a chill and the receiving guest has an attribute rule of 1.0 as interact\_chill the proposal will always be accepted. Similarly, an attribute of 0.0 will result in that the proposal being rejected at all times.
+A proposal from one agent to another is determined by the corresponding value of the guest making the proposal. For example, if a guest receives a proposal from a guest with the type of a introvert and the receiving guest has an attribute rule of 1.0 as Introvert\_attribute the proposal will always be accepted. Similarly, an attribute of 0.0 will result in that the proposal being rejected at all times.
 
 \subsubsection{Priority of personality traits and agent rules}
 The personality traits given to each agent has absolute priority over the agent rules. If a personality trait is \textless 5.0 the proposal from another agent will always be rejected regardless if the agent has a high attribute for interacting with that type of agent. 
@@ -134,14 +134,14 @@ The goal if this experiment is to measure the acceptance and rejection rate of t
 
 \begin{verbatim}
 
-    if self.friendly>=5 {
-		decider <- flip(self.interact_party);
+    if self.kindness>=5 {
+		decider <- flip(self.Extrovert_attribute);
 		if decider=true {
 			acceptance_count <- acceptance_count + 1;
         }
     }
     
-    else if self.friendly<5 {
+    else if self.kindness<5 {
 	    decider <- false;
 	    rejection_count <- rejection_count + 1;
     }
