@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.20)  11 DEC 2020 17:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.20)  14 DEC 2020 17:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -135,29 +135,29 @@ File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 132.
- [3]
-<original_exp.png, id=17, 3848.3775pt x 2750.275pt>
+ [3] [4]
+<original_exp.png, id=22, 3848.3775pt x 2750.275pt>
 File: original_exp.png Graphic file (type png)
 <use original_exp.png>
-Package pdftex.def Info: original_exp.png  used on input line 160.
+Package pdftex.def Info: original_exp.png  used on input line 168.
 (pdftex.def)             Requested size: 192.43015pt x 137.5218pt.
- [4 </Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/original_exp.png>]
-<lowerthreshold.png, id=25, 3346.5025pt x 2433.09pt>
+<lowerthreshold.png, id=24, 3346.5025pt x 2433.09pt>
 File: lowerthreshold.png Graphic file (type png)
 <use lowerthreshold.png>
-Package pdftex.def Info: lowerthreshold.png  used on input line 172.
+Package pdftex.def Info: lowerthreshold.png  used on input line 180.
 (pdftex.def)             Requested size: 167.33493pt x 121.66162pt.
-<notimelimit.png, id=26, 3308.36pt x 2376.88pt>
+ [5 </Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/original_exp.png> </Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/lowerthreshold.png>]
+<notimelimit.png, id=30, 3308.36pt x 2376.88pt>
 File: notimelimit.png Graphic file (type png)
 <use notimelimit.png>
-Package pdftex.def Info: notimelimit.png  used on input line 179.
+Package pdftex.def Info: notimelimit.png  used on input line 187.
 (pdftex.def)             Requested size: 165.42769pt x 118.85095pt.
-<priority.png, id=27, 3312.375pt x 2519.4125pt>
+<priority.png, id=31, 3312.375pt x 2519.4125pt>
 File: priority.png Graphic file (type png)
 <use priority.png>
-Package pdftex.def Info: priority.png  used on input line 186.
+Package pdftex.def Info: priority.png  used on input line 194.
 (pdftex.def)             Requested size: 165.62845pt x 125.978pt.
- [5 </Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/lowerthreshold.png> </Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/notimelimit.png>] [6 </Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/priority.png>] (/Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/report.aux) ) 
+ [6 </Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/notimelimit.png> </Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/priority.png>] (/Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/report.aux) ) 
 Here is how much of TeX's memory you used:
  1511 strings out of 492616
  23275 string characters out of 6129480
@@ -165,9 +165,9 @@ Here is how much of TeX's memory you used:
  5425 multiletter control sequences out of 15000+600000
  8370 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,7n,25p,605b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,7n,25p,920b,246s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on "/Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/report.pdf" (6 pages, 443467 bytes).
+Output written on "/Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/report.pdf" (6 pages, 446037 bytes).
 PDF statistics:
  60 PDF objects out of 1000 (max. 8388607)
  36 compressed objects within 1 object stream

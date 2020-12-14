@@ -131,6 +131,14 @@ A proposal from one agent to another is determined by the corresponding value of
 \subsubsection{Priority of personality traits and agent rules}
 The personality traits given to each agent has absolute priority over the agent rules. If a personality trait is \textless 5.0 the proposal from another agent will always be rejected regardless if the agent has a high attribute for interacting with that type of agent. 
 
+\subsection{Implementing spread of infection}
+During the time this project was conducted the world is currently going thru the COVID-19 pandemic. Therefore we think it’s interesting to see how a virus like this can spread around a festival and infect the guests while they interact with each other.
+The five personality traits are now added to a group of other agents that have the same personality as themselves. The groups are challenging each other for which team that will be left when all other teams have been infected with the virus. To manage this, the simulation is extended with an instructor agent that handles this spread of disease. The instructor will at the start of the simulation infect one team member of each team with the virus. The guests are then free to wander around the festival and interact with each other according to the rules explained in previous chapters. However, when an agent accepts a proposal for interacting from another infected agent, the accepting agent will be infected as well and carry on the virus to other guests it interacts with.  
+
+\subsubsection{Communication thru FIPA}
+The instructor species are responsible for keeping track of what’s happening during the festival in regards to this spread of infection competition. This communication is done in real time thru the communication protocol FIPA. The instructor will when all members of a time has been infected remove this team from the competition. In addition to this, the instructor is also updating a leader board that shows the state of each team. 
+
+
 \section{Results}
 
 This section shows the results from running the experiment
