@@ -173,17 +173,23 @@ species guest skills: [moving, fipa] {
 			write guestList;
 			self.limit_interactions <- true;
 			
+
+			//do start_conversation (to:guestList, protocol: 'fipa-request', performative: 'inform', contents:[self.name,self.type,'I want to know about you']);
 			do start_conversation with: [to :: guestList, protocol :: 'fipa-request', performative :: 'inform', contents ::  [self.name,self.type] ];
 			initiater <- true;
 			list guestList2 <- guestList;
 			int M <- length(guestList2);
+			//loop while: guestList2 != nil {
 			loop i from:0 to:M-1 {
 				participant_name<- guestList[i];
 
+				//write participant_name;
 				participant_name.participant<- true;
 				participant_name.limit_interactions<- true;
 				add self to: participant_name.initiater_name;
 
+				
+				
 			}
 			self.initiater <- true;
 			self.participant <- false;
@@ -196,9 +202,13 @@ species guest skills: [moving, fipa] {
 	}
 
 	
+	
 	reflex interact when:  !empty(informs) {
     	message m <- informs[0];
-		list<unknown> c <- m.contents;			
+		//message r <- (requests at 0);
+		list<unknown> c <- m.contents;
+		//write c[1];
+			
 
 			if (c[1] = 'Extrovert') {
 				write string(c[0]) + 'asks: Hi, ' + string(self.name) + '. I am ' + string(c[1]) + ' and I want to dance with you.';

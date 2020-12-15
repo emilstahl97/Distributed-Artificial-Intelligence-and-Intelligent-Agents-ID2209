@@ -165,6 +165,7 @@ species guest skills: [moving, fipa] {
 			self.targetPoint <- placeList[rnd(0, length(placeList)-1)].location;
 		}
 	}
+	
 	reflex startconversation when: (self.limit_interactions=false) and !self.participant  {
 		guestList <- guest at_distance 5;
 		
@@ -182,23 +183,22 @@ species guest skills: [moving, fipa] {
 
 				participant_name.participant<- true;
 				participant_name.limit_interactions<- true;
-				add self to: participant_name.initiater_name;
-
+				add self to: participant_name.initiater_name;			
 			}
+			
 			self.initiater <- true;
 			self.participant <- false;
 		}
 		if !empty(guestList) and self.participant{
 			self.dialoge <-true;
 			
-		}
-		 
+		}		 
 	}
 
 	
 	reflex interact when:  !empty(informs) {
     	message m <- informs[0];
-		list<unknown> c <- m.contents;			
+		list<unknown> c <- m.contents;
 
 			if (c[1] = 'Extrovert') {
 				write string(c[0]) + 'asks: Hi, ' + string(self.name) + '. I am ' + string(c[1]) + ' and I want to dance with you.';

@@ -75,7 +75,7 @@ species guest skills: [moving, fipa] {
 	float Salesman_attribute;
 	
 	int time <- 0 update: time + 1;
-	int time_limit <- rnd(200,400);
+	int autonomy <- rnd(200,400);
 	bool limit_interactions <- false;
 	
 	string type <- guest_type[rnd(0, length(guest_type)-1)];
@@ -142,9 +142,9 @@ species guest skills: [moving, fipa] {
 		do wander;
 	}
 	
-	reflex choosePlace when: (self.time=self.time_limit) or (!self.initialized) {
+	reflex choosePlace when: (self.time=self.autonomy) or (!self.initialized) {
 		self.time <- 0;
-		self.time_limit <- rnd(200,400);
+		self.autonomy <- rnd(200,400);
 		self.initialized <- true;
 		self.limit_interactions <- false;
 		self.participant <- false;
@@ -173,17 +173,23 @@ species guest skills: [moving, fipa] {
 			write guestList;
 			self.limit_interactions <- true;
 			
+
+			//do start_conversation (to:guestList, protocol: 'fipa-request', performative: 'inform', contents:[self.name,self.type,'I want to know about you']);
 			do start_conversation with: [to :: guestList, protocol :: 'fipa-request', performative :: 'inform', contents ::  [self.name,self.type] ];
 			initiater <- true;
 			list guestList2 <- guestList;
 			int M <- length(guestList2);
+			//loop while: guestList2 != nil {
 			loop i from:0 to:M-1 {
 				participant_name<- guestList[i];
 
+				//write participant_name;
 				participant_name.participant<- true;
 				participant_name.limit_interactions<- true;
 				add self to: participant_name.initiater_name;
 
+				
+				
 			}
 			self.initiater <- true;
 			self.participant <- false;
@@ -196,9 +202,13 @@ species guest skills: [moving, fipa] {
 	}
 
 	
+	
 	reflex interact when:  !empty(informs) {
     	message m <- informs[0];
-		list<unknown> c <- m.contents;			
+		//message r <- (requests at 0);
+		list<unknown> c <- m.contents;
+		//write c[1];
+			
 
 			if (c[1] = 'Extrovert') {
 				write string(c[0]) + 'asks: Hi, ' + string(self.name) + '. I am ' + string(c[1]) + ' and I want to dance with you.';
