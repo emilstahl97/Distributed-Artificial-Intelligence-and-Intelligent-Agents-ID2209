@@ -170,7 +170,7 @@ species guest skills: [moving, fipa] {
 		
 		if !empty(guestList) and !self.participant{
 			write  name + ' I would like to know your character';
-			//write guestList;
+			write guestList;
 			self.limit_interactions <- true;
 			
 			do start_conversation with: [to :: guestList, protocol :: 'fipa-request', performative :: 'inform', contents ::  [self.name,self.type] ];
