@@ -5,7 +5,7 @@
 * Tags: Tag1, Tag2, TagN
 ***/
 
-model BasicModel
+model FestivalModel
 
 global {
 	int place_num <- 9;
@@ -304,7 +304,7 @@ species guest skills: [moving, fipa] {
 	}
 }
 
-experiment BasicModel type: gui {
+experiment FestivalModel type: gui {
 	output {
 		display Festival {
 			species place aspect: base;
