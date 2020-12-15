@@ -82,6 +82,15 @@ species guest skills: [moving, fipa] {
 	point targetPoint;
 	bool initialized <- false;
 	bool decider;
+	//added by Peyman
+//	guest neighbor <- nil;
+	list<guest> guestList<- [];
+	bool initiater <- false;
+	bool participant <- false;
+	bool dialoge <- false;
+	guest participant_name <- nil;
+	list<guest> initiater_name <- nil;
+	
 	
 	aspect base {
 		if self.initialized = false {
@@ -137,6 +146,12 @@ species guest skills: [moving, fipa] {
 		self.autonomy <- rnd(200,400);
 		self.initialized <- true;
 		self.limit_interactions <- false;
+		self.participant <- false;
+		self.initiater <- false;
+		self.initiater_name<- nil;
+		self.guestList<- nil;
+		self.dialoge <- false;
+		
 		if self.type = 'Extrovert' {
 			self.targetPoint <- placeListDancefloor[rnd(0, length(placeListDancefloor)-1)].location;
 		} else if self.type = 'Introvert' {
@@ -149,99 +164,151 @@ species guest skills: [moving, fipa] {
 			self.targetPoint <- placeList[rnd(0, length(placeList)-1)].location;
 		}
 	}
-	
-	
-	reflex replyMessage when: (!empty(informs)) {
-		message request <- (informs at 0);
+	reflex startconversation when: (self.limit_interactions=false) and !self.participant  {
+		guestList <- guest at_distance 5;
 		
-	}
-	
-	reflex interact when: (self.limit_interactions=false) {
-		ask guest at_distance 5#m {
-			if (myself.type = 'Extrovert') {
-				write string(myself.name) + 'asks: Hello, ' + string(self.name) + '. I am ' + string(myself.type) + ' and I want to dance with you.';
-				do start_conversation (to :: [self.name], protocol :: 'fipa-request', performative :: 'informs', contents :: [myself.type]);
+		if !empty(guestList) and !self.participant{
+			write  name + ' I would like to know your character';
+			write guestList;
+			self.limit_interactions <- true;
+			
+
+			//do start_conversation (to:guestList, protocol: 'fipa-request', performative: 'inform', contents:[self.name,self.type,'I want to know about you']);
+			do start_conversation with: [to :: guestList, protocol :: 'fipa-contract-net', performative :: 'inform', contents ::  [self.name,self.type] ];
+			initiater <- true;
+			list guestList2 <- guestList;
+			int M <- length(guestList2);
+			//loop while: guestList2 != nil {
+			loop i from:0 to:M-1 {
+				participant_name<- guestList[i];
+
+				//write participant_name;
+				participant_name.participant<- true;
+				participant_name.limit_interactions<- true;
+				add self to: participant_name.initiater_name;
+
 				
+				
+			}
+			self.initiater <- true;
+			self.participant <- false;
+		}
+		if !empty(guestList) and self.participant{
+			self.dialoge <-true;
+			
+		}
+		 
+	}
+
+	
+	
+	reflex interact when:  !empty(informs) {
+    	message m <- informs[0];
+		//message r <- (requests at 0);
+		list<unknown> c <- m.contents;
+		//write c[1];
+			
+
+			if (c[1] = 'Extrovert') {
+				write string(c[0]) + 'asks: Hello, ' + string(self.name) + '. I am ' + string(c[1]) + ' and I want to dance with you.';
+				//message m <- (informs at 0);
+				//do propose with: [ message :: m, contents :: ['Dance with me!'] ];
 				if self.sympathetic>=5 {
 					decider <- flip(self.interact_Extrovert);
 					if decider=true {
 						acceptance_count <- acceptance_count + 1;
-						write string(self.name) + 'says: Yes, ' + string(myself.name) + '. I am ' + string(self.type) + ' and I accept to dance with you.';
+						do agree with: [ message :: m, contents :: ['interested'] ];
+						write string(self.name) + 'says: Yes, ' + string(c[0]) + '. I am ' + string(self.type) + ' and I accept to dance with you.';
 					} else if decider=false {
 						rejection_count <- rejection_count + 1;
-						write string(self.name) + 'says: No, ' + string(myself.name) + '. I am ' + string(self.type) + ' and I do not like ' + string(myself.type) + ' people.';
+						do refuse with: [ message :: m, contents :: ['not-interested'] ];
+						write string(self.name) + 'says: No, ' + string(c[0]) + '. I am ' + string(self.type) + ' and I do not like ' + string(c[1]) + ' people.';
 					}
 				} else if self.sympathetic<5 {
 					decider <- false;
 					rejection_count <- rejection_count + 1;
-					write string(self.name) + 'says: No, ' + string(myself.name) + '. I am sorry, but I am not sympathetic enough to dance with you.';
+					write string(self.name) + 'says: No, ' + string(c[0]) + '. I am sorry, but I am not sympathetic enough to dance with you.';
+					do refuse with: [ message :: m, contents :: ['not-interested'] ];
 				}
-			} else if (myself.type = 'Introvert') {
-				write string(myself.name) + 'asks: Hello, ' + string(self.name) + '. I am ' + string(myself.type) + ' and I want to chill with you.';
+			} else if (c[1] = 'Introvert') {
+				//write string(myself.name) + 'asks: Hello, ' + string(self.name) + '. I am ' + string(myself.type) + ' and I want to chill with you.';
 				if self.sympathetic>=5 {
 					decider <- flip(self.interact_Introvert);
 					if decider=true {
 						acceptance_count <- acceptance_count + 1;
-						write string(self.name) + 'says: Yes, ' + string(myself.name) + '. I am ' + string(self.type) + ' and I accept to chill with you.';
+						do agree with: [ message :: m, contents :: ['interested'] ];
+						write string(self.name) + 'says: Yes, ' + string(c[0]) + '. I am ' + string(self.type) + ' and I accept to chill with you.';
 					} else if decider=false {
 						rejection_count <- rejection_count + 1;
-						write string(self.name) + 'says: No, ' + string(myself.name) + '. I am ' + string(self.type) + ' and I do not like ' + string(myself.type) + ' people.';
+						do refuse with: [ message :: m, contents :: ['not-interested'] ];
+						write string(self.name) + 'says: No, ' + string(c[0]) + '. I am ' + string(self.type) + ' and I do not like ' + string(c[1]) + ' people.';
 					}
 				} else if self.sympathetic<5 {
 					decider <- false;
 					rejection_count <- rejection_count + 1;
-					write string(self.name) + 'says: No, ' + string(myself.name) + '. I am sorry, but I am not sympathetic enough to chill with you.';
+					write string(self.name) + 'says: No, ' + string(c[0]) + '. I am sorry, but I am not sympathetic enough to chill with you.';
+					do refuse with: [ message :: m, contents :: ['not-interested'] ];
 				}
-			} else if (myself.type = 'Juicehead') {
-				write string(myself.name) + 'asks: Hello, ' + string(self.name) + '. I am ' + string(myself.type) + ' and I want to drink with you.';
+			} else if (c[1] = 'Juicehead') {
+				//write string(myself.name) + 'asks: Hello, ' + string(self.name) + '. I am ' + string(myself.type) + ' and I want to drink with you.';
 				if self.kindness>=5 {
 					decider <- flip(self.interact_Juicehead);
 					if decider=true {
 						acceptance_count <- acceptance_count + 1;
-						write string(self.name) + 'says: Yes, ' + string(myself.name) + '. I am ' + string(self.type) + ' and I am inviting you for a drink.';
+						do agree with: [ message :: m, contents :: ['interested'] ];
+						write string(self.name) + 'says: Yes, ' + string(c[0]) + '. I am ' + string(self.type) + ' and I am inviting you for a drink.';
 					} else if decider=false {
 						rejection_count <- rejection_count + 1;
-						write string(self.name) + 'says: No, ' + string(myself.name) + '. I am ' + string(self.type) + ' and I do not like ' + string(myself.type) + ' people.';
+						do refuse with: [ message :: m, contents :: ['not-interested'] ];
+						write string(self.name) + 'says: No, ' + string(c[0]) + '. I am ' + string(self.type) + ' and I do not like ' + string(c[1]) + ' people.';
+						do refuse with: [ message :: m, contents :: ['not-interested'] ];
 					}
 				} else if self.kindness<5 {
 					decider <- false;
 					rejection_count <- rejection_count + 1;
-					write string(self.name) + 'says: No, ' + string(myself.name) + '. I am sorry, but I am not generous enough to invite you for a drink.';
+					write string(self.name) + 'says: No, ' + string(c[0]) + '. I am sorry, but I am not generous enough to invite you for a drink.';
+					do refuse with: [ message :: m, contents :: ['not-interested'] ];
 				}
-			} else if (myself.type = 'Journalist') {
-				write string(myself.name) + 'asks: Hello, ' + string(self.name) + '. I am ' + string(myself.type) + ' and I want a picture with you.';
+			} else if (c[1] = 'Journalist') {
+				//write string(myself.name) + 'asks: Hello, ' + string(self.name) + '. I am ' + string(myself.type) + ' and I want a picture with you.';
 				if self.sympathetic>=5 {
 					decider <- flip(self.interact_Journalist);
 					if decider=true {
 						acceptance_count <- acceptance_count + 1;
-						write string(self.name) + 'says: Yes, ' + string(myself.name) + '. I am ' + string(self.type) + ' and I am taking a picture with you.';
+						do agree with: [ message :: m, contents :: ['interested'] ];
+						write string(self.name) + 'says: Yes, ' + string(c[0]) + '. I am ' + string(self.type) + ' and I am taking a picture with you.';
 					} else if decider=false {
 						rejection_count <- rejection_count + 1;
-						write string(self.name) + 'says: No, ' + string(myself.name) + '. I am ' + string(self.type) + ' and I do not like ' + string(myself.type) + ' people.';
+						do refuse with: [ message :: m, contents :: ['not-interested'] ];
+						write string(self.name) + 'says: No, ' + string(c[0]) + '. I am ' + string(self.type) + ' and I do not like ' + string(c[1]) + ' people.';
 					}
 				} else if self.sympathetic<5 {
 					decider <- false;
 					rejection_count <- rejection_count + 1;
-					write string(self.name) + 'says: No, ' + string(myself.name) + '. I am sorry, but I am not sympathetic enough to take a picture with you.';
+					write string(self.name) + 'says: No, ' + string(c[0]) + '. I am sorry, but I am not sympathetic enough to take a picture with you.';
+					do refuse with: [ message :: m, contents :: ['not-interested'] ];
 				}
-			} else if (myself.type = 'Salesman') {
-				write string(myself.name) + 'asks: Hello, ' + string(self.name) + '. I am ' + string(myself.type) + ' and I want to sell drugs to you.';
+			} else if (c[1] = 'Salesman') {
+				//write string(myself.name) + 'asks: Hello, ' + string(self.name) + '. I am ' + string(myself.type) + ' and I want to sell drugs to you.';
 				if self.charitable>=5 {
 					decider <- flip(self.interact_Salesman);
 					if decider=true {
 						acceptance_count <- acceptance_count + 1;
-						write string(self.name) + 'says: Yes, ' + string(myself.name) + '. I am ' + string(self.type) + ' and I am buying drugs to you.';
+						do agree with: [ message :: m, contents :: ['interested'] ];
+						write string(self.name) + 'says: Yes, ' + string(c[0]) + '. I am ' + string(self.type) + ' and I am buying drugs to you.';
 					} else if decider=false {
 						rejection_count <- rejection_count + 1;
-						write string(self.name) + 'says: No, ' + string(myself.name) + '. I am ' + string(self.type) + ' and I do not like ' + string(myself.type) + ' people.';
+						do refuse with: [ message :: m, contents :: ['not-interested'] ];
+						write string(self.name) + 'says: No, ' + string(c[0]) + '. I am ' + string(self.type) + ' and I do not like ' + string(c[1]) + ' people.';
 					}
 				} else if self.charitable<5 {
 					decider <- false;
 					rejection_count <- rejection_count + 1;
-					write string(self.name) + 'says: No, ' + string(myself.name) + '. I am sorry, but I am not charitable enough to buy drugs to you.';
+					write string(self.name) + 'says: No, ' + string(c[0]) + '. I am sorry, but I am not charitable enough to buy drugs to you.';
+					do refuse with: [ message :: m, contents :: ['not-interested'] ];
 				}
 			}
-		}
+		
 		self.limit_interactions <- true;
 	}
 }
