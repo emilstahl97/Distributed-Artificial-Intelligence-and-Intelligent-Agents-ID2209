@@ -1,4 +1,4 @@
-#Mon Dec 14 18:59:33 CET 2020
+#Thu Dec 17 12:53:30 CET 2020
 \!/=
 /instance/org.eclipse.core.net/org.eclipse.core.net.hasMigrated=true
 /instance/org.eclipse.core.resources/pathvariable.CACHE_LOC=/Users/emilstahl/Documents/GitHub/Distributed-Artificial-Intelligence-and-Intelligent-Agents-ID2209/Project/Festival Project/.cache
@@ -11,8 +11,8 @@
 /instance/org.eclipse.ui.workbench/UIActivities.disabled2=true
 /instance/org.eclipse.ui.workbench/UIActivities.org.eclipse.xtext.ui=false
 /instance/org.eclipse.ui.workbench/clearWorkspace=false
-/instance/org.eclipse.ui.workbench/org.eclipse.compare.contentmergeviewer.TextMergeViewer=1|Menlo|16.0|0|COCOA|1|;
-/instance/org.eclipse.ui.workbench/org.eclipse.jface.textfont=1|Menlo|16.0|0|COCOA|1|;
+/instance/org.eclipse.ui.workbench/org.eclipse.compare.contentmergeviewer.TextMergeViewer=1|Menlo|18.0|0|COCOA|1|;
+/instance/org.eclipse.ui.workbench/org.eclipse.jface.textfont=1|Menlo|18.0|0|COCOA|1|;
 @org.eclipse.core.net=1.3.400.v20181030-1645
 @org.eclipse.core.resources=3.13.300.v20190218-2054
 @org.eclipse.ui.editors=3.11.400.v20190218-1547
